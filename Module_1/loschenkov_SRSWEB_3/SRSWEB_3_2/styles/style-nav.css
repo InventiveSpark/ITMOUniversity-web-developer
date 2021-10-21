@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    background: url(../images/Cat_Logo.png) center bottom no-repeat #4d2b39;
+    /* Путь к файлу с изображением, положение по центру снизу, отмена повторения фона и задание фонового цвета */
+    /* Image source: https://www.craigtaillefer.com/cat_logo/ */
+}
+
+html {
+    height: 100%;
+}
+
+.nav td {
+    height: 40px;
+}
+
+.nav a {
+    color: #ffcc66;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    text-shadow: 1.5px 0 1.5px #4d2b39, 0 1.5px 1.5px #4d2b39, -1.5px 0 1.5px #4d2b39, 0 -1.5px 1.5px #4d2b39;
+}
+
+.nav a:hover {
+    border-bottom: 1px dotted #ffcc66;
+}
+
+.nav a:active {
+    color: yellow;
+}

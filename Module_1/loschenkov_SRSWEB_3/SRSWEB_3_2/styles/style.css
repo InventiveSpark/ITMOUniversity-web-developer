@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+}
+
+body+.content {
+    background-color: #e6d5c4;
+}
+
+a, .description {
+    color: #bb9696;
+}
+
+.description {
+    font-size: small;
+}
+
+h1 {
+    color: #4d2b39;
+}
+
+.container {
+    margin: 50px 30px;
+}
+
+.container p {
+    color: black;
+    text-align: justify;
+}
+
+.container img {
+    margin-right: 20px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+p+.source {
+    font-style: italic;
+    text-align: right;
+}
