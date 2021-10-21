@@ -33,7 +33,7 @@ h1 {
     float: left;
 }
 
-p+.source {
+.container p+.source {
     font-style: italic;
     text-align: right;
 }
