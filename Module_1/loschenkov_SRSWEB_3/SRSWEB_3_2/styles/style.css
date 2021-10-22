@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
 }
 
-body+.content {
+.content {
     background-color: #e6d5c4;
 }
 
