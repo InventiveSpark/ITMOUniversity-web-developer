@@ -1,13 +1,13 @@
- /* Задание гарнитуры шрифта: */
+/* Задание гарнитуры шрифта: */
 
- h1 {
-     font-family: Georgia, 'Times New Roman', Times, serif;
- }
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
- h2 {
-     font-family: 'Courier New', Courier, Monaco, monospace;
- }
+h2 {
+    font-family: 'Courier New', Courier, Monaco, monospace;
+}
 
- .copy {
-     font-family: Arial, Helvetica, Geneva, sans-serif;
- }
+.copy {
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+}
