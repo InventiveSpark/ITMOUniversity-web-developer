@@ -1,0 +1,11 @@
+/* Задание гарнитуры шрифта, задание курсивного начертания шрифта: */
+
+.booktitle {
+    font-family: 'Times New Roman', times, serif;
+    font-style: italic;
+}
+
+p {
+    font-family: Arial, Helvetica, serif;
+    font-style: italic;
+}
