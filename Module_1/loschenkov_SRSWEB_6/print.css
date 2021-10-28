@@ -1,0 +1,312 @@
+/* Объявление CSS переменных: */
+:root {
+    /* Ширина макета сайта: */
+    --site-layout-width: 950px;
+    /* Высота подвала: */
+    --footer-height: 200px;
+    /* Ширина боковой колонки: */
+    --aside-width: 200px;
+    /* Ширина рамок: */
+    --borders-width: 2px;
+    /* Внутренние отступы у основных блоков сайта: */
+    --basic-paddings: 15px;
+    /* Фоновый цвет, отображаемый за пределами основной страницы и цвет кнопок
+       меню, расположенного на боковой колонке, при наведении: */
+    --background-color: teal;
+    /* Фоновый цвет основных блоков сайта: */
+    --blocks-background-color: #CDCDCD;
+    /* Фоновый цвет блока main при выводе страницы на устройство «Принтер»: */
+    --blocks-background-color-for-print: lime;
+    /* Фоновый цвет кнопок: */
+    --buttons-background-color: red;
+    --buttons-hover-color: darkred;
+    /* Цвет рамок: */
+    --borders-color: white;
+    /* Цвет рамки, отделяющей подвал: */
+    --footer-border-color: blue;
+    /* Цвет текста в кнопках бокового меню и подвала: */
+    --menu-text-color: black;
+}
+
+/* Для всех элементов: */
+* {
+    /* Внутренние и внешние отступы будут «съедать» внутренние размеры блоков,
+       а не наоборот: */
+    box-sizing: border-box;
+}
+
+/* Сброс внешних и внутренних отступов для тегов html и body позволяет 
+   отрисовывать страницу от самого края области просмотра браузера,
+   а стопроцентная высота позволяет растянуть по всей высоте экрана даже 
+   небольшую страницу: */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    /* Фоновый цвет, отображаемый за пределами основной страницы: */
+    background-color: var(--background-color);
+}
+
+.container {
+    /* Ширина макета сайта: */
+    width: var(--site-layout-width);
+    /* Принудительное задание полной доступной высоты для того, чтобы страница
+       занимала, как минимум, всю высоту экрана': */
+    height: 100%;
+    /* Выравнивание по центру для того, чтобы он располагался по середине 
+       страницы и не прилипал ни к какому краю. Обнуление отступов сверху 
+       и снизу для того, чтобы сетка начинала формироваться от верхнего края
+       области просмотра браузера и свободно могла доходить до ее нижнего 
+       края: */
+    margin: 0 auto;
+}
+
+/* Подвал: */
+footer {
+    /* Высота: */
+    min-height: var(--footer-height);
+    /* Фоновый цвет: */
+    background-color: var(--blocks-background-color);
+    /* Отрицательный внешний отступ сверху на величину собственной высоты 
+       поднимает подвал до уровня нижней границы блока main: */
+    margin-top: calc(var(--footer-height) * -1);
+    /* Отмена обтекания элемента одновременно с правого и левого края позволяет
+       подвалу всегда располагаться под самой высокой колонкой: */
+    clear: both;
+    /* Рамка по верхней границе подвала: */
+    border: var(--footer-border-color) solid;
+    border-width: calc(var(--borders-width) * 2) 0 0 0;
+}
+
+/* Для того, чтобы плавающие элементы (боковая колонка aside и список статей
+   article) не выпадали из родительского блока main, используется прием 
+   «распорка»: внизу контейнера main, содержащего флоаты, добавляется блок 
+   с clear:both. Этот блок расположен после плавающих элементов.
+   Аналогично, для того, чтобы плавающие элементы (три меню nav) не выпадали 
+   из родительского блока footer, используется прием «псевдораспорка»: контейнеру 
+   footer, содержащему флоаты, добавляется псевдоэлемент с clear:both. Этот 
+   псевдоэлемент расположен после плавающих. */
+footer::after, .clearing {
+    /* Отмена обтекания элемента одновременно с правого и левого края: */
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* Боковая колонка: */
+main aside.rightSide {
+    /* Включение обтекания блока, при котором он прижимается к правому краю. */
+    float: right;
+    /* Отрицательный внешний отступ справа на величину собственной ширины
+       смещает колонку до правой границы блока main: */
+    margin-right: calc(var(--aside-width) * -1);
+    /* Ширина боковой колонки: */
+    width: var(--aside-width);
+}
+
+/* Параметры списка статей: */
+main article {
+    /* Включение обтекания блока, при котором он прижимается к левому краю: */
+    float: left;
+}
+
+/* Выделение места для кнопки под статьей: */
+main article section {
+    margin-bottom: calc(var(--basic-paddings) * 3.66);
+}
+
+/* Кнопки под статьями: */
+main article section a {
+    /* Показывать элемент как блочный: */
+    display: block;
+    /* Включение обтекания блока, при котором он прижимается к правому краю. */
+    float: right;
+    padding: calc(var(--basic-paddings) / 2) var(--basic-paddings);
+    margin-right: var(--basic-paddings);
+    background-color: var(--buttons-background-color);
+    text-align: center;
+    text-decoration: none;
+    color: var(--borders-color);
+}
+
+/* Кнопка при наведении курсора: */
+main article section a:hover {
+    background-color: var(--buttons-hover-color);
+}
+
+/* Создать колонки одинаковой высоты из плавающих блоков непросто. Поскольку 
+   высота плавающих блоков вычисляется автоматически, исходя из их содержимого,
+   то их высота окажется разной. Вместо того, чтобы назначать фон самим колонкам,
+   они оставляются прозрачными, а их контейнеру назначается фоновая картинка 
+   шириной во весь контейнер, повторяющаяся по вертикали. Части этой картинки, 
+   находящиеся под разными колонками, красятся в разные цвета, и при повторении 
+   вниз это дает нужный визуальный эффект, называемый «Ложные колонки» ("Faux
+   columns").
+   Внутри блока main располагаются два плавающих элемента: боковая колонка aside
+   и список статей article. Этот блок принимает всю доступную ему высоту.
+   С помощью своего фона, сформированного линейным градиентом, он задает фоновый
+   цвет и рамки для колонок, сформированных элементами aside и article. Такой 
+   способ позволяет задавать любые цвета для произвольного числа колонок. */
+main {
+    /* Принудительное задание полной доступной высоты для того, чтобы создавать
+       фоновый цвет ниже внутренних плавающих элементов: */
+    min-height: 100%;
+    /* Внутренний отступ позволяет вместить боковую панель навигации справа: */
+    padding-right: var(--aside-width);
+    /* Фоновый цвет и рамки между колонками задаются с помощью линейного 
+       градиента: */
+    background: linear-gradient(to left, 
+        var(--blocks-background-color)  calc(var(--borders-width) + var(--aside-width)), 
+        var(--borders-color)            calc(var(--borders-width) + var(--aside-width)) 
+                                        calc(var(--borders-width) * 2 + var(--aside-width)), 
+        var(--blocks-background-color)  calc(var(--borders-width) * 2 + var(--aside-width)), 
+                                        calc(100% - var(--borders-width)), 
+        var(--borders-color)            calc(100% - var(--borders-width))
+    );
+}
+
+/* Внутренние отступы у основных блоков сайта: */
+footer, main article {
+    padding: var(--basic-paddings);
+}
+
+/* Отключение маркеров списков, расположенных в пунктах меню: */
+main aside.rightSide ul li, footer nav ul li {
+    list-style-type: none;
+}
+
+/* Задание отступов в списке меню, расположенному на боковой колонке: */
+main aside.rightSide ul {
+    padding: var(--basic-paddings);
+}
+
+/* Кнопки меню, расположенного на боковой колонке: */
+main aside.rightSide ul li a {
+    /* Показывать элемент как блочный: */
+    display: block;
+    padding: var(--basic-paddings) calc(var(--basic-paddings) * 2);
+    text-align: center;
+    text-decoration: none;
+    outline: var(--borders-width) solid var(--borders-color);
+    color: var(--menu-text-color);
+}
+
+/* Кнопки меню, расположенного на боковой колонке, при наведении курсора: */
+main aside.rightSide ul li a:hover {
+    background-color: var(--background-color);
+    color: var(--borders-color);
+}
+
+/* Меню, расположенные в подвале: */
+footer nav {
+    /* Показывать элемент как блочный: */
+    display: block;
+    /* Включение обтекания блока, при котором он прижимается к левому краю. */
+    float: left;
+}
+
+footer nav.firstMenu {
+    margin-left: calc(var(--basic-paddings) * 3.33);
+}
+
+footer nav.centerMenu {
+    margin-left: calc(var(--basic-paddings) * 6.66);
+}
+
+footer nav.rightMenu {
+    /* Включение обтекания блока, при котором он прижимается к правому краю. */
+    float: right;
+    margin-right: calc(var( --aside-width) - calc(var(--basic-paddings) * 2));
+}
+
+/* Заголовки меню, расположенных в подвале: */
+footer nav p {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Обнуление отступов у списков меню, расположенных в подвале: */
+footer nav ul {
+    padding: 0;
+}
+
+/* Кнопки меню, расположенных в подвале: */
+footer nav ul a {
+    text-decoration: none;
+    color: var(--menu-text-color);
+}
+
+/* Кнопки меню, расположенных в подвале, при наведении курсора: */
+footer nav ul a:hover {
+    border-bottom: 1px dashed var(--menu-text-color);
+}
+
+/* Медиа-запрос управляет выводом страницы на устройство «Принтер»: */
+@media print {
+    /* Боковая колонка и подвал удаляются из печатаемого документа: */
+    main aside.rightSide, footer {
+        display: none;
+    }
+    /* Кнопки под статьями являются элементами интерфейса, поэтому их тоже 
+       можно удалить из печати: */
+    /*
+    main article section a {
+        display: none;
+    }*/
+    /* Элемент «распорка» скрывается и «схлопывается» по высоте: */
+    .clearing {
+        visibility: hidden;
+        height: 0;
+    }
+    main {
+        /* Фоновый цвет блока main при выводе страницы на печать: */
+        background: var(--blocks-background-color-for-print);
+        /* Обнуление внутреннего отступа справа, поскольку боковая панель 
+           навигации удаляется при печати: */
+        padding-right: 0;
+    }
+    .container {
+        /* Задание автоматического подбора высоты для того, чтобы страница
+           занимала минимальную высоту: */
+        height: auto;
+        /* При печати текст будет занимать 90% доступной области печати
+           по ширине: */
+        width: 90%;
+    }
+    /* Внешний отступ сверху у первого заголовка первой статьи обнуляется: */
+    main article section:first-child h3:first-child {
+        margin-top: 0;
+    }
+    /* Внешний отступ снизу у последней статьи обнуляется: */
+    main article section:last-child {
+        margin-bottom: 0;
+    }
+    /* Свойство page-break-after работает, если родительские элементы находятся 
+    в основном потоке, то есть имеют float:none, position не absolute или fixed. */
+    main article {
+        /* Выключение обтекания блоков: */
+        float: none;
+    }
+    /* Автоматическое добавление разрыва страницы до/после определенных элементов
+       при необходимости: */
+    main article section {
+        page-break-after: auto;
+        page-break-before: auto;
+    }
+    main article section a {
+        page-break-after: auto;
+    }
+    main article section h3 {
+        page-break-before: auto;
+    }
+    /* Запрет добавления разрывов страницы внутри статей: */
+    main article section h3, main article section p {
+        page-break-after: avoid;
+    }
+    main article section p, main article section a {
+        page-break-before: avoid;
+    }
+}

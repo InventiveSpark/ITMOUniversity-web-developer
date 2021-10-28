@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Практическая работа &#8470;6.1</title>
+    <meta name="viewport" content="width=device‐width, initial‐scale=1.0">
+    <style type="text/css">
+        body,
+        html {
+            height: 100%;
+        }
+
+        i:before {
+            font-size: 145px;
+            text-align: center;
+            margin-top: 140px;
+            color: #fff;
+            display: block;
+        }
+
+        /* Каскадное применение стилей в зависимости от ширины экрана:
+           Стили этого медиа-запроса будут применяться только для экранных устройств
+           с шириной области просмотра менее 320px: */
+        @media screen and (min-width: 0px) {
+
+            body,
+            html {
+                background-color: red;
+            }
+
+            i:before {
+                content: "Mobile";
+            }
+        }
+
+        /* Стили этого медиа-запроса будут применяться только для экранных устройств
+           с шириной области просмотра не менее 321px и не более 768px: */
+        @media screen and (min-width: 321px) {
+
+            body,
+            html {
+                background-color: lime;
+            }
+
+            i:before {
+                content: "Tablet";
+            }
+        }
+
+        /* Стили этого медиа-запроса будут применяться только для экранных устройств
+           с шириной области просмотра не менее 769px и не более 1024px: */
+        @media screen and (min-width: 769px) {
+
+            body,
+            html {
+                background-color: black;
+            }
+
+            i:before {
+                content: "Laptop";
+            }
+        }
+
+        /* Стили этого медиа-запроса будут применяться только для экранных устройств
+           с шириной области просмотра не менее 1025px: */
+        @media screen and (min-width: 1025px) {
+
+            body,
+            html {
+                background-color: #ccc;
+            }
+
+            i:before {
+                content: "Screen";
+            }
+        }
+
+        /* Если задавать свойства через диапазоны (см. ниже), то на одном пикселе 
+           вблизи пограничных значений будут применяться свойства "для всех" 
+           (в браузере Firefox - вероятно, он округляет границы до четных значений):
+               Для всех
+               @media screen and (max-width: 1024px) and (min-width: 769px)
+               @media screen and (max-width: 768px) and (min-width: 321px) 
+               @media screen and (max-width: 320px) */
+    </style>
+</head>
+
+<body>
+    <i>
+        <!--Тэг курсивного начертания-->
+    </i>
+</body>
+
+</html>
