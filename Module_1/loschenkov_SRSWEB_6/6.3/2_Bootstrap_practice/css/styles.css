@@ -1,0 +1,283 @@
+/* Файл со стилями пользователя загружается последним и может переопределить 
+   стили любых библиотек: */
+
+/* Для всей страницы: */
+body {
+    /* Задание гарнитуры шрифта без засечек: */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+    /* Горизонтальное выравнивание текста (или строчных элементов): */
+    text-align: center;
+    /* Ограничение области просмотра по ширине: */
+    min-width: 320px;
+}
+
+p {
+    color: #8f8f8f;
+}
+
+/* Ссылки (Links) */
+
+/* Задание стилей ссылкам: */
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Задание стилей ссылкам при наведении: */
+
+a:hover {
+    color: #555555;
+}
+
+/* Заголовки (Headings) */
+
+/* Задание насыщенности шрифта заголовков: */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+/* Контейнеры (Containers) */
+
+.container-fluid {
+    /* Внутренние отступы в контейнере: */
+    padding: 7% 14%;
+}
+
+/* Разделы (Sections) */
+
+/* Разделы с цветным фоном: */
+
+.colored-section {
+    /* Варианты фонового цвета: */
+    /* background-color: #d02a5a; */
+    /* background-color: #c70039; */
+    /* background-color: #fa1859; */
+    /* background-color: #cd1a4d; */
+    
+    background: linear-gradient(to bottom, #cd1a4d, #c70039);
+    background: linear-gradient(to bottom, #cd1a4d, #d02a5a);
+    color: white;
+}
+
+/*Разделы с белым фоном: */
+
+.white-section {
+    background-color: white;
+    color: black;
+}
+
+/* Шапка или заголовок (Header or Title Section) */
+
+#title .container-fluid {
+    padding: 3% 14% 7.5%;
+    text-align: left;
+}
+
+/* Навигационная панель (Navigation bar) */
+
+.nav-item {
+    /* Отступы между ссылками в меню по горизонтали увеличиваются: */
+    padding: 0 12px;
+}
+
+/* Ссылки в меню: */
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.navbar-nav .dropdown-menu {
+    /* Позиционирование выпадающего списка слева
+       от вызывающей его иконки: */
+    right: 0;
+    left: auto;
+    /* Уменьшение минимальной ширины выпадающего списка: */
+    min-width: 6rem;
+}
+
+/* Фон выбранного элемента в выпадающем списке: */
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #f2f2f2;
+}
+
+/* О нас (Features Section) */
+
+.feature-title {
+    font-size: 1.5rem;
+}
+
+.feature-box {
+    padding: 5%;
+}
+
+.icon {
+    color: #ff4c68;
+    /* Отступ от текста ниже: */
+    margin-bottom: 1rem;
+}
+
+.icon:hover {
+    color: #fb195a;
+}
+
+/* Отзывы клиентов (Customer Reviews Section) */
+
+/* Текст отзыва: */
+
+.review-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+/* Фотография клиента: */
+
+.review-image {
+    width: 10%;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+/* Каталог товаров (Catalog Section) */
+
+#catalog {
+    padding: 7% 0;
+}
+
+.catalog-column {
+    text-align: left;
+}
+
+/* Тень карточки продукта: */
+
+.product-card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.07);
+    transition: all 0.3s;
+}
+
+/* Тень карточки продукта при наведении: */
+
+.product-card:hover {
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+.product-image a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    padding: 15px;
+}
+
+/* Адаптация изображений товаров под размеры родительского блока: */
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.catalog-title {
+    font-weight: 500;
+    /* Показывать элемент как блочный: */
+    display: block;
+    /* Максимальная высота блока с названием: */
+    height: 60px;
+    /* Скрывать часть названия, не помещающуюся в блок: */
+    overflow: hidden;
+}
+
+.product-details p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    /* Максимальная высота блока с описанием: */
+    height: 45px;
+    /* Скрывать часть описания, не помещающуюся в блок: */
+    overflow: hidden;
+}
+
+.product-details-bottom {
+    border-top: 2px solid #e2e2e2;
+    padding-top: 15px;
+    /* Скрывать текст, не помещающийся в блок: */
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ff4c68;
+}
+
+.product-price small {
+    text-decoration: line-through;
+    font-weight: 400;
+    color: #8f8f8f;
+    margin-right: 5px;
+}
+
+.product-links a {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+/* Поиск товаров (Search Section) */
+
+#Search {
+    padding-bottom: 10%;
+}
+
+#Search p {
+    color: white;
+    margin-bottom: 1.6rem;
+}
+
+#SearchBar .form-control {
+    border-color: #fb2e69;
+}
+
+/* Кнопка поиска: */
+
+.btn-outline-success {
+    color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+}
+
+.btn-outline-success:hover {
+    background-color: white;
+    border-color: #fb2e69;
+    color: #fb2e69;
+}
+
+/* Подвал (Footer Section) */
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+/* При ширине экрана меньшей, чем large, логотип смещается вправо так, 
+   чтобы располагаться ровно над пунктами выпадающего меню. */
+
+@media screen and (max-width: 992px) {
+    .navbar-brand {
+        padding-left: 18px;
+    }
+}

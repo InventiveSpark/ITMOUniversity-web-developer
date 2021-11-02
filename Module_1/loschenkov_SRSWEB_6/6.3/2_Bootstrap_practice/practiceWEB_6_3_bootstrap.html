@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Практическая работа &#8470;6.3</title>
+
+    <!--Добавление иконки сайта в адресную строку браузера: -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!--Подключение шрифта Montserrat: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--Подключение стилевых файлов: -->
+    <!--Файл Bootstrap со стилями адаптивной сетки из 12 колонок. Он также содержит         
+        библиотеку сброса Reboot.css, основанную на Normalize.css. Bootstrap 
+        использует ее для сброса стилей браузера по умолчанию и придания 
+        веб-страницам единообразного вида: -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Файл со стилями пользователя загружается последним и может переопределить стили любых
+        библиотек: -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Подключение шрифтов Font Awesome: -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Шапка и навигационная панель (Header with Navigation Bar) -->
+
+    <header class="colored-section" id="title">
+        <!--Класс navbar-expand-lg убирает кнопку, вызывающую меню, и раскрывает меню
+            полностью при ширине экрана от 992px и выше: -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <!--container-fluid занимает всю доступную область просмотра при любых значениях ширины экрана: -->
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="images/logo.svg" alt="Ashot E-Shop">
+                </div>
+                <!--Кнопка, вызывающая «меню гамбургера», показывается при свернутом меню: -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!--Левая часть навигационной панели: -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#features">О&nbsp;нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#catalog">Каталог</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Отзывы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Контакты</a>
+                        </li>
+                    </ul>
+                    <!--Правая часть навигационной панели: -->
+                    <ul class="navbar-nav me-right mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" title="Личный кабинет">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Вход</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="fas fa-handshake"></i>&nbsp;Регистрация</a></li>
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="fas fa-heart"></i>&nbsp;&nbsp;Избранное</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Выход</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Корзина"><i class="fas fa-shopping-cart"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Search" title="Поиск"><i class="fas fa-search"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!--О нас (Features) -->
+
+    <section class="white-section" id="features">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-lg-4 feature-box">
+                    <i class="fas fa-business-time fa-4x icon"></i>
+                    <h3 class="feature-title">Круглосуточная работа!</h3>
+                    <p>Без перерывов и&nbsp;выходных.</p>
+                </div>
+
+                <div class="col-lg-4 feature-box ">
+                    <i class="fas fa-award fa-4x icon"></i>
+                    <h3 class="feature-title">Надёжность, проверенная временем</h3>
+                    <p>25&nbsp;лет на&nbsp;рынке, начинали с&nbsp;Черкизовского! Сотни тысяч довольных клиентов!</p>
+                </div>
+
+                <div class="col-lg-4 feature-box">
+                    <i class="fas fa-hand-holding-usd fa-4x icon"></i>
+                    <h3 class="feature-title">Гарантия лучшей цены</h3>
+                    <p>Нашли в&nbsp;другом магазине товар дешевле? Сделаем скидку от&nbsp;цены конкурента!</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Отзывы клиентов (Customer Reviews) -->
+
+    <section class="colored-section" id="reviews">
+
+        <div id="review-carousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active container-fluid">
+                    <h2 class="review-text">У&nbsp;Ашота новые модели iPhone появляются раньше всех в&nbsp;Москве.
+                        Он&nbsp;всегда очень внимательный: помогает мне подобрать цвет, модель&nbsp;и,
+                        к&nbsp;тому&nbsp;же, осыпает меня комплементами. Всегда беру смартфоны у&nbsp;него и&nbsp;другим
+                        советую!</h2>
+                    <img class="review-image" src="images/lady.jpg" alt="Наташа">
+                    <!--Image source: https://thispersondoesnotexist.com/ -->
+                    <em>Наташа, Москва</em>
+                </div>
+                <div class="carousel-item container-fluid">
+                    <h2 class="review-text">Любое, даже самое экзотическое средство связи, можно найти у&nbsp;Ашота
+                        по&nbsp;сходной цене. Товар доставляется всего за&nbsp;пару дней.</h2>
+                    <img class="review-image" src="images/mister.jpg" alt="Азат">
+                    <!--Image source: https://thispersondoesnotexist.com/ -->
+                    <em>Азат, Казань</em>
+                </div>
+                <div class="carousel-item container-fluid">
+                    <h2 class="review-text">Уже двадцатый год&nbsp;я, муж, дети, а&nbsp;теперь и&nbsp;внуки, покупаем
+                        у&nbsp;Ашота. В&nbsp;его магазине можно найти любое средство связи&nbsp;&mdash;
+                        от&nbsp;телефонов и&nbsp;раций до&nbsp;почтовых голубей!</h2>
+                    <img class="review-image" src="images/grandma.jpg" alt="Виктория">
+                    <!--Image source: https://thispersondoesnotexist.com/ -->
+                    <em>Виктория, Ростов</em>
+                </div>
+            </div>
+            <!--Кнопки, прокручивающие карусель влево и вправо: -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#review-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#review-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+    </section>
+
+
+    <!--Каталог товаров (Catalog Section) -->
+    
+    <section class="white-section" id="catalog">
+
+        <!--Вместо container-fluid используется container, имеющий фиксированную максимальную ширину 
+            в контрольных точках и расширяющийся на всю ширину только на очень маленьких устройствах: -->
+        <div class="container">
+            <!--Структура сетки описывается следующим образом:
+                    container - контейнер сетки;
+                    row - ряд, строка сетки;
+                    col-**-* - ширина модулей (блоков) сетки в колонках.
+                Контейнер содержит в себе строки (блоки с классом row) и ограничивает сетку по ширине.
+                Строки находятся внутри контейнера. Модули, находящиеся в одной строке, оборачиваются 
+                в блок классом row.
+                Каждая ширина экрана называется по-своему: xs, sm, md, lg, xl. От слов extra small, 
+                small, medium, large, extra-large. Эти названия используются в именах классов модулей,
+                где сначала идет префикс col-, затем ширина экрана, для которой применяется значение,
+                и в конце - количество колонок, которые займет модуль (блок) в 12-колоночной сетке.
+                Для того, чтобы строки не содержали пустых мест и были полностью заполнены, 
+                суммарная ширина модулей в строке должна составлять 12 колонок. Например, это 
+                может быть один модуль шириной в 12 колонок, или могут быть три модуля шириной в 1, 8
+                и 3 колонки, или 12 модулей шириной в одну колонку каждый. Количество колонок в модуле,
+                задающее ширину блока, - величина произвольная. Она может быть разной для разных 
+                разрешений и задаваться в нескольких вариантах (в зависимости от ширины экрана) путем
+                указания дополнительных классов, которые при достижении контрольных точек (в заранее 
+                указанных значениях размера экрана, прописанных в медиа-запросах) будут переопределять
+                ширину модуля. Таким образом, для одного и того же модуля (блока) можно выбрать, 
+                сколько колонок он займёт на разных экранах. -->
+            <div class="row">
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/iPhone.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-z2ydh1/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">iPhone</a></h4>
+                            <p>Легендарный смартфон от&nbsp;Apple.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>630.99$</small>
+                                    589.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/megaphone.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-853kdc/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Мегафон</a></h4>
+                            <p>Вас точно услышат!</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>79.99$</small>
+                                    59.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/Intercom.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-cp09cn/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Домофон</a></h4>
+                            <p>Узнайте, кто пришёл.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>39.99$</small>
+                                    29.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/pager.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-6ap7qg/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Пейджер</a></h4>
+                            <p>Приёмник персонального вызова.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small></small>
+                                    30.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/matches.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-7zqrfd/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Спички</a></h4>
+                            <p>Для разведения сигнального костра.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>10.99$</small>
+                                    3.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/retro.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://pixabay.com/ru/illustrations/%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd-%d0%b0%d0%bd%d0%b0%d0%bb%d0%be%d0%b3%d0%be%d0%b2%d1%8b%d0%b9-%d1%80%d0%b5%d1%82%d1%80%d0%be-%d1%81%d1%82%d0%b0%d1%80%d1%8b%d0%b9-4598563/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Ретро телефон</a></h4>
+                            <p>Аппарат с&nbsp;двумя трубками: одна&nbsp;&mdash; для приёма, а&nbsp;другая&nbsp;&mdash;
+                                для передачи речи.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small></small>
+                                    1299.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/STA-2.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://collectionerus.ru/media/items/d/de/dep8mjuijezu0tjz.jpg -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Аппарат спецсвязи</a></h4>
+                            <p>Знаменитая &laquo;вертушка&raquo;&nbsp;&mdash; телефон СТА-2&nbsp;с гербом СССР
+                                на&nbsp;диске.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small></small>
+                                    350.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/signal_flare.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.google.com/imgres?imgurl=https%3A%2F%2Fpoisktrade.ru%2Fimage%2Fcache%2Fcatalog%2Fturistic-inv%2Frsp-30-odna-zvezda-krasnogo-ognya-1-650x650.jpg&imgrefurl=https%3A%2F%2Fpoisktrade.ru%2Fturicticheckie-prinadlezhnocti%2Fpirotexnicheckie-credctva-dlya-podachi-cignalov%2Freaktivnyj-signalnyj-patron-rsp-30-odna-zvezda-krasnogo-ognya&tbnid=PLWUnI2ntfqRdM&vet=12ahUKEwjuge_89vnzAhUNnosKHYuLCkcQMyg4egQIARBH..i&docid=ZDl20AcZkemFGM&w=650&h=650&q=%D0%A1%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B0%D1%82%D1%80%D0%BE%D0%BD%20&hl=ru&ved=2ahUKEwjuge_89vnzAhUNnosKHYuLCkcQMyg4egQIARBH -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Сигнальная ракета</a></h4>
+                            <p>Надёжное средство связи, применяемое в&nbsp;армии!</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>19.99$</small>
+                                    15.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/Morse_key.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-bz29jp/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Телеграфный ключ</a></h4>
+                            <p>Телеграфный ключ в&nbsp;комплекте с&nbsp;азбукой Морзе.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small></small>
+                                    599.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/baby_monitor.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://aliexpress.ru/i/33011841344.html -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Видеоняня</a></h4>
+                            <p>Ваш малыш всегда будет под присмотром.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>79.99$</small>
+                                    69.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/Nokia3310.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://lugansk.diamondelectric.ru/images/1823/1822506/nokia_3310_1.jpg -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Nokia 3310</a></h4>
+                            <p>Легендарная модель. Продано 126&nbsp;млн. аппаратов.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>69.99$</small>
+                                    49.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/Android.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-jham8q/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Android</a></h4>
+                            <p>Смартфон на&nbsp;базе ОС&nbsp;Android.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>239.99$</small>
+                                    219.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/disk_dialer.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-yifimi/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Телефон дисковый</a></h4>
+                            <p>Классический стационарный аппарат с&nbsp;дисковым номеронабирателем.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small></small>
+                                    49.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/radio_set.jpg" alt="Фотография товара"></a>
+                            <!--Image source: https://www.freepng.ru/png-zhrb0h/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Рация</a></h4>
+                            <p>Незаменима в&nbsp;горах и&nbsp;в&nbsp;лесу.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small>99.99$</small>
+                                    79.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catalog-column col-lg-4 col-sm-6 mb-3">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="#"><img src="images/homer.jpg" alt="Почтовый голубь"></a>
+                            <!--Image source: https://www.freepng.ru/png-10tklc/ -->
+                        </div>
+                        <div class="product-details">
+                            <h4><a class="catalog-title" href="#">Почтовый голубь</a></h4>
+                            <p>Вид воздушной почты, проверенный тысячелетиями.</p>
+                            <div class="product-details-bottom d-flex justify-content-between">
+                                <div class="product-price">
+                                    <small></small>
+                                    189.99$
+                                </div>
+                                <div class="product-links">
+                                    <a href="#" title="Добавить в&nbsp;корзину"><i class="fas fa-cart-plus"></i></a>
+                                    <a href="#" title="Добавить в&nbsp;избранное"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--Поиск товаров (Search) -->
+
+    <div class="container-fluid colored-section" id="Search">
+        <h2 class="section-heading">Средства связи</h2>
+        <p><em>Широкий ассортимент по&nbsp;доступным ценам</em></p>
+        <!--Форма поиска: -->
+        <form class="d-flex" id="SearchBar">
+            <input class="form-control me-3" type="search" placeholder="Название товара" aria-label="Search">
+            <button class="btn btn-lg btn-outline-success search_icon" type="submit" title="Найти"><i
+                    class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+
+    <!--Подвал (Footer) -->
+
+    <footer class="white-section" id="footer">
+
+        <div class="container-fluid">
+            <a href="#" title="ВКонтакте"><i class="fab fa-vk social-icon"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+            <a href="#" title="Электронная почта"><i class="fas fa-envelope social-icon"></i></a>
+            <a href="#" title="Как к&nbsp;нам проехать?"><i class="fas fa-map-marked-alt social-icon"></i></a>
+            <a href="#" title="Телефон"><i class="fas fa-phone social-icon"></i></a>
+            <p>&copy;&nbsp;2021&nbsp;Ashot&nbsp;E-Shop.</p>
+        </div>
+
+    </footer>
+
+
+    <!--Подключение библиотек JavaScript (Bootstrap Bundle with Popper): -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

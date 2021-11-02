@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Практическое задание &#8470;6.3</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Подключение стилевых файлов: -->
+    <!--Normalize.css обеспечивает для HTML-элементов лучшую кроссбраузерность в стилях по умолчанию: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Файл со стилями адаптивной сетки из 12 колонок, основанной на элементах float: -->
+    <link rel="stylesheet" type="text/css" href="grid.css">
+    <!--Файл со стилями пользователя загружается последним и может переопределить стили любых
+        библиотек: -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Контейнер содержит в себе строки (блоки с классом row) и ограничивает сетку по ширине: -->
+    <div class="container">
+        <!--Строки находятся внутри контейнера. Колонки, находящиеся в одной строке, оборачиваются в блок 
+            с классом row: -->
+        <div class="row">
+            <!--Внутри строк находятся модули. Класс col задает общие стили для всех модулей вне 
+                зависимости от их размеров. Дополнительный класс col-12 задает размер модуля (сколько 
+                колонок по ширине должен занимать блок с таким классом) вне зависимости от размера 
+                экрана. В данном случае это 12 колонок, т.е. вся строка: -->
+            <div class="col col-12">
+                <h1 class="header">Название сайта</h1>
+            </div>
+        </div>
+        <!--Для того, чтобы следующий модуль всегда размещался с новой строки, нужно включить его внутрь 
+            нового блока с классом row: -->
+        <div class="row">
+            <!--Дополнительные классы col-md-3 и col-12 при достижении контрольных точек (в заранее указанных
+                значениях размера экрана) будут переопределять ширину модуля:
+                1. col-md-3 для экранов средней ширины от 992px и выше задаст ширину модуля в три колонки 
+                   (4 модуля на строку);
+                2. col-12 для всех остальных значений ширины экрана, (меньших, чем 992px) растянет модуль 
+                   на всю строку: -->
+            <div class="col col-md-3 col-12">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-3 col-12">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-3 col-12">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-3 col-12">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-4 col-4">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-4 col-4">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-4 col-4">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2 col-6">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-5 col-6">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+            <div class="col col-md-5 col-12">
+                <p>asdas sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa
+                    sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas sadasdas asdasdas asdasdasd asdasdsa sadasdas
+                    sadasdas asdasdas asdasdasd asdasdsa</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
