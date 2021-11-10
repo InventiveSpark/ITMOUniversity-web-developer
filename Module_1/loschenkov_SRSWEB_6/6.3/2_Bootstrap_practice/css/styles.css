@@ -251,16 +251,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Поиск товаров (Search Section) */
 
-#Search {
+#search {
     padding-bottom: 10%;
 }
 
-#Search p {
+#search p {
     color: white;
     margin-bottom: 1.6rem;
 }
 
-#SearchBar .form-control {
+#search-bar .form-control {
     border-color: #fb2e69;
 }
 
