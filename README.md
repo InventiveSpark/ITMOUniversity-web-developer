@@ -13,4 +13,4 @@
 ## [Тема 8. CSS-анимация](Module_1/loschenkov_SRSWEB_8)
 ## Тема 9. Подготовка, размещение и поддержка сайта в сети
 ## Тема 10. Гибкая работа со страницами сайта
-## Итоговое задание к курсу
+## [Итоговое задание к курсу](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_1-final)
