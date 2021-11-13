@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Самостоятельная работа &#8470;2.4</title>
+    <title>Самостоятельная работа &#8470;3.4</title>
 </head>
 
 <body>
@@ -30,11 +30,11 @@
                 ^        начало строки
                 [-+]     символы - и +
                 ? -      квантор, означающий одно или ноль вхождений
-                \d+      одна или более цифр (символов в диапазоне 0-9)
+                \d*      ноль или более цифр (символов в диапазоне 0-9)
                 \.{0,1}  в строке может быть точка (0 или 1 раз)
-                \d*      ноль или более цифр
+                \d+      одна или более цифр
                 $        конец строки */
-            while (!(/^[-+]?\d+\.{0,1}\d*$/.test(tmp)));;
+            while (!(/^[-+]?\d*\.{0,1}\d+$/.test(tmp)));;
 
             /* Функция parseInt() принимает строку в качестве аргумента 
                и возвращает целое число в соответствии с указанным основанием 
@@ -54,7 +54,7 @@
             while (i < arrOfNumbers.length) {
                 arrOfNumbers[i++] *= tmp;
             }
-            console.log("Result = ", arrOfNumbers);
+            // console.log("Result =", arrOfNumbers);
         }
     </script>
 </body>
