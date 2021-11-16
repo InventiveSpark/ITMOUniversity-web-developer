@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.9. Работа с методом Math.round</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            // Функция округляет число num до ndigits знаков после запятой.
+            const customRounding = (num, ndigits) => {
+                /* Множитель, представляющий из себя число 10, возведённое 
+                   в степень количества заданных знаков (цифр) после запятой: */
+                const multiplier = 10 ** ndigits;
+                /* Функция Math.round производит округление до ближайшего целого.
+                   Положительные числа, дробная часть которых ≥ 0.5, 
+                   и отрицательные числа с дробной частью > 0.5 округляются 
+                   с избытком. Использование множителя позволяет произвести 
+                   округление до определенного количества знаков после запятой: */
+                return Math.round(num * multiplier) / multiplier;
+            }
+            let number = 123.8435326523
+            for (let i = 0; i <= 10; i++)
+                console.log(customRounding(number, i));
+        }
+    </script>
+</body>
+
+</html>

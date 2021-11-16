@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.7. Получение отдельных характеристик даты</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+
+            /* Функция getDateProperties получает на вход количество 
+               миллисекунд с начала 1970 года в часовом поясе UTC - в 
+               соответствии с заключённым в то время соглашением о времени в ОС
+               семейства UNIX. Функция возвращает объект, содержащий следующий 
+               перечень полей в часовом поясе UTC:
+                   день, месяц, год, часы, минуты и секунды.                
+               Если внутри функции использовать методы без слова UTC (т.е. 
+               getDay, getMonth, getFullYear и т.д.), то информация будет 
+               возвращена в местном часовом поясе пользователя. */
+            function getDateProperties(milliseconds) {
+                /* Создание нового объекта, представляющего заданную дату 
+                   и время: */
+                const tempDate = new Date(milliseconds);
+                // Возврат объекта с требуемыми полями:
+                return {
+                    day: tempDate.getUTCDate(), // день месяца (от 1 до 31)
+                    month: tempDate.getUTCMonth() + 1, // номер месяца (от 1 (январь) до 12 (декабрь))
+                    year: tempDate.getUTCFullYear(), // полный год (например, 2019)
+                    hour: tempDate.getUTCHours(), // час (от 0 до 23)
+                    minutes: tempDate.getUTCMinutes(), // минуты (от О до 59)
+                    seconds: tempDate.getUTCSeconds() // секунды (от О до 59)
+                };
+            }
+            console.log(getDateProperties(1628414191622));
+            // {day: 8, month: 8, year: 2021, hour: 9, minutes: 16, seconds: 31}
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.1. Таймер setTimeout()</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            /* Функция startTimer() через 2 секунды реализует вызов alert() 
+               со строкой "Hello, World!": */
+            const startTimer = () => {
+                /* Метод setTimeout() используется для однократного вы­полнения
+                   определенной функции в заданное время. Метод принимает два 
+                   аргумента: функцию, которую нужно будет выполнить позже, 
+                   когда истечет тайм-аут, и продолжительность тайм-аута 
+                   в миллисекундах: */
+                setTimeout(() => { alert("Hello, World!"); }, 2000);
+            }
+            startTimer();
+        }
+    </script>
+</body>
+
+</html>

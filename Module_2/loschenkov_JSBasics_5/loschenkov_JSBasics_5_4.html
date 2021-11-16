@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.4. Доступ к CSS стилям с помощью JavaScript</title>
+</head>
+
+<body>
+    <div class="myDiv" style="
+        background-color: red;
+        height: 300px;
+        font-family: Arial, Helvetica, sans-serif
+        ">Текст в блоке
+    </div>
+    <p></p>
+    <input type="button" value="Получить стиль" onClick="getStyle('backgroundColor')" />
+    <script>
+        {
+            "use strict";
+            /* Функция getStyle() на вход получает имя стилевого свойства. 
+               Далее, получает доступ к элементу с CSS классом "myDiv" и узнаёт 
+               значение указанного свойства. Полученное значение выводит 
+               в параметр innerText элемента p. */
+            function getStyle(nameStyle) {
+                /* DOM-метод document.querySelector( ) возвращает не все, 
+                   а только первый (в последовательности документа) элемент, 
+                   соответствующий CSS селектору, или null, если соответствующий 
+                   элемент не найден. Когда элемент найден, им можно управлять 
+                   при помощи JavaScript-кода. */
+                let propertyOwner = document.querySelector(".myDiv");
+                /* Эквивалентная запись (если элемент не найден, то по нулевому
+                   индексу будет возвращено значение undefined): */
+                // let propertyOwner = document.querySelectorAll(".myDiv")[0];
+                if (propertyOwner !== null && propertyOwner !== undefined)
+                    /* Если элемент с CSS классом "myDiv" найден, то для того,
+                       чтобы получить доступ к значению стилей этого элемента, 
+                       достаточно вызвать список style и обратиться к одному из
+                       свойств (в данном случае к свойству nameStyle). Значение 
+                       стилевого свойства выводится в параметр innerText 
+                       элемента p. innerText - это свойство всех элементов DOM. 
+                       Содержимое элемента без НТМL-тегов. Если свойству 
+                       innerText присвоить новое значение, то изменится 
+                       значение элемента: */
+                    document.querySelector("p").innerText = propertyOwner.style[nameStyle];
+            }
+        }
+    </script>
+</body>
+
+</html>

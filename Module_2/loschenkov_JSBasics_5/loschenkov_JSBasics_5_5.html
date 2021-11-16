@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.5. Изменение CSS стилей с помощью JavaScript</title>
+</head>
+
+<body>
+    <div class="myDiv" style="
+        background-color: red;
+        height: 300px; 
+        font-family: Arial, Helvetica, sans-serif
+        ">Текст в блоке
+    </div>
+    <input type="text" value=".myDiv" id="elem">
+    <input type="text" value="backgroundColor" id="style">
+    <input type="text" value="#ccc" id="value">
+    <input type="button" value="Изменить стиль" onClick="changeStyle()" />
+    <script>
+        {
+            "use strict";
+            /* Функция changeStyle() при вызове обращается последовательно 
+               к input-ам (#elem, #style, #value), затем получает от них 
+               значения, которые сейчас содержатся в текстовых полях 
+               (свойство value). Далее получает доступ к элементу, селектор
+               которого был указан в поле input с id="elem". После этого 
+               в style у выбранного элемента находит свойство, имя которого
+               указано в поле input с id="style", и присваивает выбранному 
+               свойству новое значение из поля с id="value". */
+            function changeStyle() {
+                /* DOM-метод document.getElementById даёт браузеру команду 
+                   отыскать элемент с указанным id. Этот вызов вернёт DOM-объект
+                   с соответствующим id. Когда элемент найден, им можно 
+                   управлять при помощи JavaScript-кода. 
+                   Значения, которые содержатся в пользовательских полях для
+                   ввода информации: */
+                let selectorV = document.getElementById("elem").value;
+                let styleV = document.getElementById("style").value;
+                let valueV = document.getElementById("value").value;
+                /* DOM-метод document.querySelector( ) возвращает не все, 
+                   а только первый (в последовательности документа) элемент, 
+                   соответствующий CSS селектору, или null, если соответствующий 
+                   элемент не найден. Когда элемент найден, им можно управлять 
+                   при помощи JavaScript-кода. */
+                let propertyOwner = document.querySelector(selectorV);
+                if (propertyOwner !== null)
+                    /* Если найден элемент с CSS селектором, который находится 
+                       в переменной selectorV, то для того, чтобы изменить 
+                       значение стиля у этого элемента, достаточно вызвать 
+                       список style и, обратившись к одному из его свойств, 
+                       присвоить этому свойству новое значение: */
+                    propertyOwner.style[styleV] = valueV;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -20,7 +20,7 @@
 ## [Тема 2. Конструкции ветвления и циклы](Module_2/loschenkov_JSBasics_2)
 ## [Тема 3. Функции](Module_2/loschenkov_JSBasics_3)
 ## [Тема 4. Массивы и объекты](Module_2/loschenkov_JSBasics_4)
-## Тема 5. Клиентский JavaScript. Объект Window
+## [Тема 5. Клиентский JavaScript. Объект Window](Module_2/loschenkov_JSBasics_5)
 ## Тема 6. Клиентский JavaScript. Объектная модель документа: DOM. Работа с HTML элементами
 ## Тема 7. Клиентский JavaScript. Cookie
 ## Тема 8. Клиентский JavaScript. Формы и обработка событий

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.2. Отмена работы таймера setTimeOut()</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            /* Метод setTimeout() используется для однократного вы­полнения
+               определенной функции в заданное время. Метод принимает два 
+               аргумента: функцию, которую нужно будет выполнить позже, 
+               когда истечет тайм-аут, и продолжительность тайм-аута 
+               в миллисекундах.
+               Переменные firstTimer и secondTimer хранят индексы таймеров
+               в памяти окружения JavaScript. Данные индексы понадобятся, если 
+               мы захотим отменить работу какого-либо из таймеров: */
+            let firstTimer = window.setTimeout(() => { alert('Отработал первый!'); }, 2000);
+            let secondTimer = window.setTimeout(() => { alert('Отработал второй!'); }, 4000);
+            /* Метод clearTirneout(<таймер>) сбрасывает таймер, который был
+               установлен ранее методом setTimeout(). Первый таймер 
+               останавливается для того, чтобы запустился только второй: */
+            clearTimeout(firstTimer);
+        }
+    </script>
+</body>
+
+</html>
