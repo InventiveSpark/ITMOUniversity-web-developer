@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.3. Объединение массива (преобразование массива в строку)</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            let prоducts = [];
+            prоducts[0] = "Блины";
+            prоducts[1] = "Квас";
+            /* Элемент массива с индексом 2 отсутствует. Как и в любом объекте, 
+               несуществующее свойство принимает значение undefined. */
+            prоducts[3] = "Пельмени";
+            prоducts[4] = "Икра";
+            function printProduct(arr) {
+                let tmpArr = [];
+                for (let i = 0; i < arr.length; i++) {
+                    /* Очередной не пустой элемент добавляется во временный 
+                       массив: */
+                    if (arr[i] !== undefined)
+                        tmpArr.push(arr[i]);
+                }
+                /* join(separator) - неизменяющий метод класса Array. Возвращает
+                   строку, содержащую все элементы массива, преобразованные 
+                   в строки и разделенные строкой separator (по умолчанию ",").
+                   Поскольку метод join преобразует отсутствующие элементы 
+                   и элементы, равные undefined, в пустые строки, нельзя было
+                   сразу применять его к исходному массиву. Метод join с 
+                   разделителем "/" применяется к временному массиву tmpArr: */
+                return tmpArr.join("/");
+            }
+            /* Метод document.write пишет строку, возвращенную функцией 
+               printProduct, в поток документа, открытый с помощью 
+               document.open(): */
+            document.write(printProduct(prоducts));
+        }
+    </script>
+</body>
+
+</html>

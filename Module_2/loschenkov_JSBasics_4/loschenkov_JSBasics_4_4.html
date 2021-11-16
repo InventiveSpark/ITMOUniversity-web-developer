@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.4. Сортировка массива</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            let arr = ["Книги", "Фильмы", "Видео", "Контакты", "Поисковик", 1, 5, 3, 2];
+            /* Функция, на вход которой подаётся массив, возвращает строку с
+               отсортированными элементами массива (из которого исключены все 
+               undefined элементы), разделенными символом "|": */
+            const sortAndJoin = (unsortedArr) => {
+                let tmpArr = [];
+                for (let i = 0; i < unsortedArr.length; i++) {
+                    /* Очередной не пустой элемент добавляется во временный 
+                       массив: */
+                    if (unsortedArr[i] !== undefined)
+                        tmpArr.push(unsortedArr[i]);
+                }
+                /* sort(comparisonFunction) - изменяющий метод класса Array. 
+                   Сортирует временный массив на месте: */
+                tmpArr.sort();
+                /* join(separator) - неизменяющий метод класса Array. Возвращает
+                   строку, содержащую все элементы массива, преобразованные 
+                   в строки и разделенные строкой separator (по умолчанию ",").
+                   Поскольку метод join преобразует отсутствующие элементы 
+                   и элементы, равные undefined, в пустые строки, нельзя было
+                   сразу применять его к исходному массиву. Метод join с 
+                   разделителем "|" применяется к временному массиву tmpArr: */
+                return tmpArr.join("|");
+            }
+            /* Метод document.write пишет строку, возвращенную функцией 
+               sortAndJoin, в поток документа, открытый с помощью 
+               document.open(): */
+            document.write(sortAndJoin(arr));
+        }
+    </script>
+</body>
+
+</html>

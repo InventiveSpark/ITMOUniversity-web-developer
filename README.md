@@ -19,7 +19,7 @@
 ## [Тема 1. Введение в JavaScript](Module_2/loschenkov_JSBasics_1)
 ## [Тема 2. Конструкции ветвления и циклы](Module_2/loschenkov_JSBasics_2)
 ## [Тема 3. Функции](Module_2/loschenkov_JSBasics_3)
-## Тема 4. Массивы и объекты
+## [Тема 4. Массивы и объекты](Module_2/loschenkov_JSBasics_4)
 ## Тема 5. Клиентский JavaScript. Объект Window
 ## Тема 6. Клиентский JavaScript. Объектная модель документа: DOM. Работа с HTML элементами
 ## Тема 7. Клиентский JavaScript. Cookie

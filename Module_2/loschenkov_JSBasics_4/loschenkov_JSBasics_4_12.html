@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.12</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            /* Функция getIndexOfChar() получает на вход строку и символ (или
+               подстроку) для поиска, а отдаёт в качестве значения индекс 
+               символа в строке. Если символа (подстроки) нет, то возвращает 
+               -1: */
+            const getIndexOfChar = (string, subString) => {
+                /* Метод indexOf получает строку-аргумент и возвращает индекс 
+                   первого символа первого вхождения аргумента в своей строке. 
+                   Также можно передать второй аргумент - индекс начальной 
+                   позиции поиска (по умолчанию равный 0). Если подстрока 
+                   отсутствует, этот метод возвращает -1. */
+                return string.indexOf(subString);
+            }
+            let name = "Станислав";
+            console.log(getIndexOfChar(name, "С")); // 0
+            console.log(getIndexOfChar(name, "а")); // 2
+            console.log(getIndexOfChar(name, "Я")); // -1
+        }
+    </script>
+</body>
+
+</html>

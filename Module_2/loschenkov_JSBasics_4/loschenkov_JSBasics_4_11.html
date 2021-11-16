@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.11</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            /* Функция getChar() получает на вход строку и индекс символа 
+               в строке (нумерация начинается с нуля), а отдаёт в качестве
+               значения символ из строки: */
+            const getChar = (string, index) => {
+                /* Метод charAt получает целое число от 0 до длины строки 
+                   (минус 1) и возвращает строку с одним символом, находящимся
+                   в заданной позиции. Строку можно рассматривать как массив, 
+                   элементами которого являются отдельные символы, а индексы 
+                   начинаются с 0 (как и в обычных массивах). Если переданный 
+                   индекс больше либо равен длине строки, возвращается пустая
+                   строка. */
+                return string.charAt(index);
+            }
+            let name = "Станислав";
+            console.log(getChar(name, 0));  // С
+            console.log(getChar(name, 1));  // т
+            console.log(getChar(name, 20)); // пустая строка
+        }
+    </script>
+</body>
+
+</html>

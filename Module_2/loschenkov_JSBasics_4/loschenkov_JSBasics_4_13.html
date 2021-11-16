@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.13</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            /* Функция getSplitArr() получает на вход строку и символ (или
+               подстроку) разделителя, а отдает (возвращает через return) 
+               в качестве значения массив из строк: */
+            const getSplitArr = (string, separator) => {
+                /* Метод split получает разделитель и разбивает строку на массив
+                   подстрок по позициям разделителя, удаляя его. В общем виде 
+                   синтаксис метода таков: split(separator, maxParts) 
+                   Возвращает массив частей строки, полученный удалением всех 
+                   вхождений разделителя separator (который может быть 
+                   регулярным выражением). Если параметр maxParts опущен, 
+                   возвращаются все части: */
+                return string.split(separator);
+            }
+            let names = "Станислав, Нина, Илья, Николай, Ирина, Дмитрий, Алла";
+            let resArr = getSplitArr(names, ", "); // Разделитель-запятая и пробел
+            console.log(resArr);
+            //['Станислав', 'Нина', 'Илья', 'Николай', 'Ирина', 'Дмитрий', 'Алла']
+        }
+    </script>
+</body>
+
+</html>

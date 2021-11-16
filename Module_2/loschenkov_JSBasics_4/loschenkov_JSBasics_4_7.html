@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.7. Создайте метода у объекта</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            // Создание объекта city:
+            let city = {};
+            // Название города (строка):
+            city["name"] = "ГородN";
+            // Население города (строка):
+            city["population"] = "10 млн";
+            // Метод getName() возвращает название города:
+            city["getName"] = function () {
+                return this.name;
+            }
+            console.log("city: ", city);
+            console.log("name: ", city.getName());
+        }
+    </script>
+</body>
+
+</html>

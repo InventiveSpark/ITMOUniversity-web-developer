@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.2. Вывод массива без undefined</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            let prоducts = [];
+            prоducts[0] = "Блины";
+            prоducts[1] = "Квас";
+            /* Элемент массива с индексом 2 отсутствует. Как и в любом объекте, 
+               несуществующее свойство принимает значение undefined. */
+            prоducts[3] = "Пельмени";
+            prоducts[4] = "Икра";
+            function printProduct(arr) {
+                /* В переменной tmp будет формироваться строка с ответом.
+                   Переменной присвоена пустая строка для того, чтобы задать
+                   ей тип string вместо undefined, что обеспечит чистую 
+                   конкатенацию: */
+                let tmp = "";
+                for (let i = 0; i < arr.length; i++) {
+                    /* К строке добавляется очередной не пустой элемент 
+                       массива, за которым следует тег перевода строки <br>: */
+                    if (typeof arr[i] !== "undefined")
+                        tmp += arr[i] + "<br>";
+                }
+                /* Метод document.write пишет строку tmp в поток документа, 
+                   открытый с помощью document.open(). Поскольку document.write 
+                   пишет строку в поток документа, вызов document.write для 
+                   закрытого (но загруженного) документа автоматически вызовет 
+                   document.open, который очистит документ.
+                   Строка пишется в HTML-документ без проверки структуры тегов, 
+                   как будто она всегда там была. Методы document.write и 
+                   document.writeln пишут напрямую в текст документа, до того
+                   как браузер построит из него DOM, поэтому они могут записать 
+                   в документ все, что угодно, любые стили и незакрытые теги.
+                   Браузер учтёт их при построении DOM точно так же, как 
+                   учитывает очередную порцию HTML-текста. */
+                document.write(tmp);
+            }
+            printProduct(prоducts);
+        }
+    </script>
+</body>
+
+</html>

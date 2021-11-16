@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.14</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            /* Функция getSubstring() получает на вход строку, индекс начала 
+               копирования строки и индекс конца копирования строки, возвращает
+               вырезанную строку: */
+            const getSubstring = (string, start, end) => {
+                /* Данную задачу можно решить, используя один из двух методов:
+                   substring или slice.
+                   Метод substring извлекает фрагмент строки, который задан 
+                   номерами начального и конечного символов. Последний символ 
+                   в подстроку не включается. Если опустить номер конечного 
+                   символа, то включаются все символы до конца строки.
+                   Метод slice похож на substring, но в нём можно задать 
+                   отрицательное смещение, отсчитываемое от конца строки. */
+                return string.substring(start, end);
+                // Эквивалентно:                
+                // return string.slice(start, end);
+            }
+            let EmailAddress = "stanislav_sivin@mail.ru";
+            let result = getSubstring(EmailAddress, EmailAddress.indexOf("@") + 1, EmailAddress.length);
+            alert(result); // mail.ru
+        }
+    </script>
+</body>
+
+</html>

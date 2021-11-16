@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.10</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            // Создание объекта person:
+            let person = {};
+            // Имя:
+            person["name"] = "Джеймс";
+            // Фамилия:
+            person["surname"] = "Бонд";
+            /* Метод setName задаёт через переданный аргумент значение 
+               свойству name: */
+            person["setName"] = function (newName) {
+                this.name = newName;
+            }
+            /* Метод setSurname задаёт через переданный аргумент значение
+               свойству surname: */
+            person["setSurame"] = function (newSurname) {
+                this.surname = newSurname;
+            }
+            /* Метод getFullName применяет способ конкатенации строк и через
+               метод return отдаёт новую строку, содержащую фамилию и имя: */
+            person["getFullName"] = function () {
+                /* Метод concat() объединяет текст из двух или более строк 
+                   и возвращает новую строку. Из соображений производительности
+                   настоятельно рекомендуется вместо метода concat() 
+                   использовать операторы присваивания (+, +=).
+                   Подробнее см.: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat
+                */
+                return (new String).concat(this.surname, " ", this.name);
+                // Эквивалентно:
+                // return this.surname + " " + this.name;
+            }
+            console.log(person.getFullName()); // Бонд Джеймс
+            person.setName("Максим");
+            person.setSurame("Исаев");
+            console.log(person.getFullName()); // Исаев Максим            
+        }
+    </script>
+</body>
+
+</html>

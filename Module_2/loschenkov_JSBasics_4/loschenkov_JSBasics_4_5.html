@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.5. Сортировка массива пользовательской функцией</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            // Функция выводит в документ массив и его имя:
+            const PrintArray = (arrName, array) => {
+                /* Метод join, применённый к массиву array, возвращает строку 
+                   с разделителем "|", а метод document.write пишет эту строку
+                   и имя массива в поток документа, открытый с помощью 
+                   document.open(): */
+                document.write("<b>" + arrName + ":</b><br>" + array.join("|") + "<br>");
+            }
+            // Исходный неотсортированный массив, содержащий элементы undefined:
+            let arr = ["Книги", "Фильмы", "Видео", undefined, "Контакты", "Поисковик", 1, 5, 3, 2];
+            // Вывод в документ исходного массива и его имени:  
+            PrintArray("Arr", arr);
+            /* Получаем: "
+               Arr:
+               Книги|Фильмы|Видео||Контакты|Поисковик|1|5|3|2
+               " */
+            /* Пользовательская функция сравнения принимает два элемента a, b и возвращает:
+                   отрицательное число, если a должен предшествовать b;
+                   положительное число, если a должен следовать за b;
+                   0, если элементы неразличимы.
+               Функция будет применяться внутри скобок метода sort(): */
+            function compareElements(a, b) {
+                // Если один из элементов является строкой, а другой - числом:
+                if (((typeof a) == "string") && ((typeof b) == "number")) return 1;             // a должен следовать за b
+                if (((typeof a) == "number") && ((typeof b) == "string")) return -1;            // a должен предшествовать b
+                // Если оба элемента - строки:
+                if (((typeof a) == "string") && ((typeof b) == "string") && (a > b)) return -1; // a должен предшествовать b
+                if (((typeof a) == "string") && ((typeof b) == "string") && (a < b)) return 1;  // a должен следовать за b
+                if (((typeof a) == "string") && ((typeof b) == "string") && (a == b)) return 0; // элементы неразличимы
+                // Если оба элемента - числа:              
+                if (((typeof a) == "number") && ((typeof b) == "number") && (a > b)) return -1; // a должен предшествовать b
+                if (((typeof a) == "number") && ((typeof b) == "number") && (a < b)) return 1;  // a должен следовать за b
+                if (((typeof a) == "number") && ((typeof b) == "number") && (a == b)) return 0; // элементы неразличимы
+            }
+            // Создание нового массива:
+            let newArr = arr.filter(item => { // Функция фильтрации, убирающая undefined элементы, 
+                if (item !== undefined) return item; // вызывается для каждого элемента массива.
+            }).sort(compareElements); /* К отфильтрованному массиву во время сортировки применяется 
+                                         пользовательская функция сравнения. */
+            /* Вывод в документ нового массива и его имени: */
+            PrintArray("newArr", newArr);
+            /* Получаем отсортированный в порядке убивания массив newArr без 
+               элементов undefined, цифры в котором идут сплошной группой 
+               перед группой строк: "
+               newArr:
+               5|3|2|1|Фильмы|Поисковик|Контакты|Книги|Видео
+               " */
+        }
+    </script>
+</body>
+
+</html>

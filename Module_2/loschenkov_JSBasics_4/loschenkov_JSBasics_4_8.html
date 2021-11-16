@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;4.8. Создание метода объекта</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+            // Создание объекта city:
+            let city = {};
+            // Название города (строка):
+            city["name"] = "ГородN";
+            // Население города (строка):
+            city["population"] = "10 млн";
+            // Метод getName() возвращает название города:
+            city["getName"] = function () {
+                return this.name;
+            }
+            /* Метод printProperties возвращает строку, в которой через 
+               разделитель ("/") перечислены все имена и значения свойств 
+               объекта city, исключая его методы: */
+            city["printProperties"] = function () {
+                /* В переменной tmp будет формироваться строка с ответом.
+                   Переменной присвоена пустая строка для того, чтобы задать
+                   ей тип string вместо undefined, что обеспечит чистую 
+                   конкатенацию: */
+                let tmp = "";
+                // Все свойства объекта перебираются по очереди:
+                for (property in this) {
+                    // Из выводимой строки исключаются методы:
+                    if (typeof this[property] !== "function") {
+                        /* К строке добавляется имя и значение очередного 
+                           свойства объекта city: */
+                        tmp += property + "=" + this[property] + "/";
+                    }
+                }
+                // Метод возвращает сформированную строку:
+                return tmp;
+            }
+            console.log(city.printProperties());
+            // name=ГородN/population=10 млн/
+        }
+    </script>
+</body>
+
+</html>
