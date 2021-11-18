@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;6.3. Доступ к узлам DOM через имя тега</title>
+</head>
+
+<body>
+    <form>
+        <label>Введите Ваше имя<br />
+            <input type="text" id="name" size="80">
+        </label><br>
+        <label>Введите Вашу фамилию<br />
+            <input type="text" id="surname" size="80">
+        </label><br>
+        <label>Укажите Ваш возраст<br />
+            <input type="text" id="age" size="80">
+        </label><br>
+        <div>
+            <p>Укажите Ваш пол:</p>
+            <label for="male"><input id="male" type="radio" name="sex" value="male" checked>
+                Мужской
+            </label><br>
+            <label for="female"><input id="female" type="radio" name="sex" value="female">
+                Женский
+            </label><br>
+            <label for="unknown"><input id="unknown" type="radio" name="sex" value="unknown">
+                Не указан
+            </label>
+        </div>
+        <div>
+            <button onclick="getForm()">Отправить данные</button>
+            <input type="reset" value="Очистить форму">
+        </div>
+    </form>
+    <script src="scripts/script_6_3.js"></script>
+</body>
+
+</html>
