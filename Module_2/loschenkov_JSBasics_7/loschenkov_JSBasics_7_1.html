@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;7.1. Добавление новых данных в cookie</title>
+</head>
+
+<body>
+    <script>
+        {
+            "use strict";
+
+            /* Функция printCookies() выводит в консоль заданное сообщение 
+               и текущие cookie: */
+            const printCookies = (message) => {
+                console.log(message, decodeURIComponent(document.cookie));
+            }
+
+            // Вывод текущего cookie-набора в консоль:
+            printCookies("Old cookies: ");
+            // Создание переменных, в которых хранятся имя и значение cookie:
+            let name = "login", value = "stanislav";
+            /* Установить cookies можно так:
+               document.cookie = "<Имя> = <Значение>";
+               Записи cookie не могут содержать точки с запятой, двоеточия, 
+               запятые и пробелы. По этой причине для кодирования значения 
+               перед их сохранением в cookie-наборе рекомендуется использовать 
+               глобальный метод JavaScript encodeURIComponent(), кодирующий
+               компонент Uniform Resource Identifier (универсального 
+               идентификатора ресурса, URI) заменой каждой определённой 
+               последовательности символов одной, двумя, тремя или четырьмя 
+               последовательностями символов, представленных в кодировке UTF-8.
+               В таком случае при чтении значений cookie-набора придётся 
+               применять метод decodeURIComponent(), декодирующий управляющие
+               последовательности символов в компоненте URI, созданные 
+               с помощью метода encodeURIComponent() или другой подобной 
+               процедуры.
+               Сохранение пары имя/значение как cookie-набор, кодируя значения 
+               с помощью encodeURIComponent() для отмены двоеточий, точек 
+               с запятой, запятых и пробелов: */
+            document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+            // Вывод в консоль обновленного cookie-набора:
+            printCookies("New cookies: ");
+        }
+    </script>
+</body>
+
+</html>

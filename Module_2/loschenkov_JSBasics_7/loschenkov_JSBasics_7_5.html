@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Подключение библиотеки js-cookies через CDN: -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <title>Самостоятельная работа &#8470;7.5. Удаление cookie с помощью библиотеки js-cookie</title>
+    <!--Библиотека js-cookies: https://github.com/js-cookie/js-cookie -->
+
+    <style>
+        .formAuth,
+        .greetings {
+            padding: 16px;
+        }
+
+        .formAuth label {
+            font-size: 18px;
+        }
+
+        .formAuth input[type="text"] {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .formAuth button {
+            font-size: 16px;
+            padding: 7px 10px;
+        }
+    </style>
+
+    <script>
+
+        /* Функция showMessage() добавляет в элемент с классом "info" (под 
+           форму) сообщение об ошибке: */
+        const showMessage = (message) => {
+            document.getElementsByClassName("info")[0].innerHTML = message;
+        }
+
+        // Функция login() отвечает за обработку формы:
+        const login = () => {
+            // В переменные записываются данные из полей ввода логина и пароля:
+            let username = document.getElementById("login").value;
+            let password = document.getElementById("password").value;
+            /* Метод trim() удаляет пробельные символы с начала и конца строки. 
+               Пробельными символами в этом контексте считаются все собственно 
+               пробельные символы (пробел, табуляция, неразрывный пробел 
+               и прочие) и все символы конца строки (LF, CR и прочие). */
+            let trimmedUsername = username.trim();
+            let trimmedPassword = password.trim();
+            /* Если пользователь не ввёл данные, или ввёл их не полностью, 
+               то выводится сообщение для пользователя: */
+            if (trimmedUsername === "" && trimmedPassword === "")
+                showMessage("Пожалуйста, введите логин и пароль!");
+            else if (trimmedUsername === "")
+                showMessage("Пожалуйста, введите логин!");
+            else if (trimmedPassword === "")
+                showMessage("Пожалуйста, введите пароль!");
+            /* Если пользователь ввёл все данные и данные верны (логин и пароль 
+               совпали с заданными),                                           */
+            else if (username === "stanislav" && password === "pass") {
+                /* то в cookie сохраняются введенные пользователем логин 
+                   и пароль, используя метод Cookies.set() из библиотеки 
+                   js-cookie: */
+                Cookies.set("login", username);
+                Cookies.set("password", password);
+                /* Хук, позволяющий изменить внешний вид страницы без её 
+                   перезагрузки: */
+                checkStatus();
+                // Можно также сделать location.reload().
+            } else
+                /* Если пользователь ввел неверные данные, то сообщение об 
+                   ошибке добавляется в элемент с классом "info" (под форму): */
+                showMessage("Неверный логин или пароль!");
+        }
+
+        /* Функция logout() отвечает за удаление cookie-наборов: */
+        const logout = () => {
+            //Удаление cookie-наборов login и password:
+            Cookies.remove("login");
+            Cookies.remove("password");
+            /* Хук, позволяющий изменить внешний вид страницы без её 
+               перезагрузки: */
+            checkStatus();
+            // Можно также сделать location.reload()
+        }
+
+        /* Функция checkStatus() изменяет внешний вид страницы без её 
+           перезагрузки в зависимости от хранимых в cookie данных: */
+        const checkStatus = () => {
+            /* В константы записываются ссылки на элеметы формы авторизации 
+               и блока с приветствием: */
+            const FORM = document.getElementsByClassName("formAuth")[0];
+            const BLOCK = document.getElementsByClassName("greetings")[0];
+            /* Метод Cookies.get(имя_cookie) из библиотеки js-cookie позволяет 
+               получить значение cookie-набора. На вход принимает имя cookie, 
+               на выходе отдаёт значение. В переменные записываются данные 
+               о логине и пароле, прочитанные из cookie-наборов: */
+            let login = Cookies.get("login");
+            let pass = Cookies.get("password");
+            /* Если хранимые в cookie данные верны (логин и пароль совпали 
+               с заданными), */
+            if (login === "stanislav" && pass === "pass") {
+                // то форма авторизации скрывается,
+                FORM.style.display = "none";
+                // и показывается блок с приветствием,
+                BLOCK.style.display = "block";
+                /* а в текст его дочернего элемента <span> помещается обращение 
+                   (логин того, кому адресовано приветствие): */
+                document.querySelector(".greetings p span").innerText = login;
+            } else {
+                /* Если в cookie хранились неверные данные (логин и пароль не 
+                   совпали с заданными), то форма авторизации показывается, */
+                FORM.style.display = "block";
+                // а блок с приветствием скрывается:
+                BLOCK.style.display = "none";
+            }
+            /* Куда же без костылей (https://ru.wikipedia.org/wiki/Обходной_приём)
+               Из полей ввода логина и пароля очищаются введенные данные, 
+               а также удаляется сообщение об ошибке, которое могло быть 
+               добавлено в элемент с классом "info": */
+            showMessage("");
+            document.getElementById("login").value = "";
+            document.getElementById("password").value = "";
+        }
+
+        /* Установить свойство onload объекта Window в функцию. Теперь функция 
+           checkStatus() является обработчиком событий: вызывается при загрузке
+           документа. Если при загрузке документа в cookie-наборах хранятся 
+           верные данные (логин и пароль совпали с заданными), то внешний вид 
+           страницы изменится: блок с приветствием будет показан, а форма 
+           авторизации будет скрыта: */
+        window.onload = checkStatus;
+
+    </script>
+</head>
+
+<body>
+    <div class="greetings" style="display: none;">
+        <p>Добро пожаловать, <span></span>!</p>
+        <button type="button" class="logOut" onclick="logout()">Выйти</button>
+    </div>
+    <div class="formAuth" style="display: block;">
+        <label>
+            Логин:<br>
+            <input type="text" placeholder="Введите логин" id="login">
+        </label><br>
+        <label>
+            Пароль:<br>
+            <input type="text" placeholder="Введите пароль" id="password">
+        </label><br>
+        <button type="button" class="logIn" onclick="login()">Войти</button>
+        <p class="info"></p>
+    </div>
+    <p class="saveCookie"></p>
+</body>
+
+</html>

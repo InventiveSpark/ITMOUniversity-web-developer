@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Подключение библиотеки js-cookies через CDN: -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <title>Самостоятельная работа &#8470;7.4. Основы работы с библиотекой js-cookie</title>
+    <!--Библиотека js-cookies: https://github.com/js-cookie/js-cookie -->
+</head>
+
+<!--При загрузке страницы вызывается функция getCookies(): -->
+<body onload="getCookies()">
+    <div>
+        <!--Форма авторизации принимает логин и пароль и отправляет его 
+            на обработку функцией login(): -->
+        <label>
+            Логин:<br>
+            <input type="text" placeholder="Введите логин" id="login">
+        </label><br>
+        <label>
+            Пароль:<br>
+            <input type="text" placeholder="Введите пароль" id="password">
+        </label>
+        <button type="button" class="logIn" onclick="login()">Войти</button>
+    </div>
+    <!--Тег параграфа с классом saveCookie будет получать строку 
+        "<Имя> = <Значение>" из сохраненных cookie-наборов: -->
+    <p class="saveCookie"></p>
+    <!-- Внешний скрипит script.js, в котором будут реализованы функции 
+         getCookies() и login(): -->
+    <script src="script_7_4.js"></script>
+</body>
+
+</html>
