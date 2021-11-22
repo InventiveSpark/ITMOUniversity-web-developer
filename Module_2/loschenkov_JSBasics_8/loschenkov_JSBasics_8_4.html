@@ -62,9 +62,11 @@
             /* Функция восстанавливает стилевые свойства поля ввода с атрибутом 
                name="Email": */
             function resetStyles() {
-                EMAILSTYLE.color = defColor;
-                EMAILSTYLE.fontSize = defFontSize;
-                EMAILSTYLE.border = defBorder;
+                with (EMAILSTYLE) {
+                    color = defColor;
+                    fontSize = defFontSize;
+                    border = defBorder;
+                }
             }
 
             /* Функция validateEmail() проверяет на соответствие стандартам
@@ -90,13 +92,13 @@
                 if (EmailAddress.length === 0 || validateEmail(EmailAddress.trim()))
                     resetStyles();
                 // Если адрес задан с ошибкой, то у поля ввода изменяются:
-                else {
+                else with (EMAILSTYLE) {
                     // цвет шрифта
-                    EMAILSTYLE.color = "red";
+                    color = "red";
                     // размер шрифта
-                    EMAILSTYLE.fontSize = "18px";
+                    fontSize = "18px";
                     // внешняя граница
-                    EMAILSTYLE.border = "1px solid red";
+                    border = "1px solid red";
                 }
             }
 
