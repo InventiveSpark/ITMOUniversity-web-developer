@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;8.2. Доступ к атрибутам объектов</title>
+</head>
+
+<body>
+
+    <!--Все поля формы обязательны для заполнения (атрибут required). 
+        Для фильтрации ввода адреса электронной почты на уровне кода HTML, 
+        соответствующему элементу формы задан атрибут type="email": -->
+    <form action="https://tinyurl.com/3wcyvb7x" method="post" name="order">
+        <label>
+            <sup>*</sup>Имя: <br>
+            <input type="text" name="Fname" placeholder="Имя" title="Введите имя" required>
+        </label><br>
+        <label>
+            <sup>*</sup>Фамилия: <br>
+            <input type="text" name="Lname" placeholder="Фамилия" title="Введите фамилию" required>
+        </label><br>
+        <label>
+            <sup>*</sup>Email: <br>
+            <input type="email" name="Email" placeholder="Адрес E-mail" title="Введите адрес электронной почты"
+                required>
+        </label><br>
+        <!--По умолчанию кнопка отправляет данные формы на сервер, а её тип 
+            "submit". При нажатии на такую кнопку после выполнения обработчика
+            (если он не вернёт false) будет осуществлён переход на страницу, 
+            указанную в атрибуте action="целевая_страница" тега form. Консоль 
+            при этом будет очищена. -->
+        <button id="sendForm">Отправить</button>
+    </form>
+    <p class="valueOfEmail"></p>
+
+    <script>
+        {
+            "use strict";
+
+            /* Функция-слушатель display() связана с событием нажатия на кнопку,
+               id которой равен "sendForm": */
+            function display(event) {
+                /* Функция выполняет две задачи:
+                   1. Прерывание передачи формы. Для отмены срабатывания перехода 
+                      на страницу, указанную в атрибуте action="целевая_страница"
+                      тега form, используется метод preventDefault(). Это 
+                      предотвратит обработку события по умолчанию в браузере при
+                      нажатии на кнопку. Не будет производиться:
+                      * проверка полей, обязательных для заполнения;
+                      * фильтрация адреса электронной почты на уровне HTML;
+                      * переход на целевую страницу. */
+                event.preventDefault();
+                /* 2. Получение текста из поля Email и его вывод в параграф 
+                      с классом "valueOfEmail". 
+                   Объявление константы для получения доступа к форме по её 
+                   имени (атрибуту name = "order"): */
+                const FORM = document.forms.order;
+                /* Значение, введенное пользователем в поле с именем "Email",
+                   принадлежащее этой форме: */
+                let Email = FORM.Email.value;
+                /* Для доступа к параграфу с классом "valueOfEmail" используется 
+                   DOM-метод document.querySelector(), который возвращает первый
+                   (в последовательности документа) элемент, соответствующий CSS
+                   селектору, или null, если соответствующий элемент не найден. */
+                const PARAGRAPH = document.querySelector("p.valueOfEmail");
+                if (PARAGRAPH !== null)
+                    // Структура вывода: "Значение: введенные данные".
+                    PARAGRAPH.innerText = "Значение: " + Email;
+            }
+
+            /* Метод EventTarget.addEventListener('имя_события', функция_слушатель)
+               добавляет функцию-слушатель события, вызванного EventTarget, 
+               который может быть Element, Document, Window, или любым другим 
+               объектом, поддерживающим события (таким как XMLHttpRequest).
+               Добавление функции-слушателя display() для события "click" 
+               (нажатие на кнопку - элемент с id, равным "sendForm"). Теперь
+               функция display() будет вызываться каждый раз, когда будет 
+               происходить событие "click". */
+            document.getElementById("sendForm").addEventListener("click", display);
+        }
+    </script>
+
+</body>
+
+</html>

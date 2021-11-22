@@ -23,4 +23,4 @@
 ## [Тема 5. Клиентский JavaScript. Объект Window](Module_2/loschenkov_JSBasics_5)
 ## [Тема 6. Клиентский JavaScript. Объектная модель документа: DOM. Работа с HTML элементами](Module_2/loschenkov_JSBasics_6)
 ## [Тема 7. Клиентский JavaScript. Cookie](Module_2/loschenkov_JSBasics_7)
-## Тема 8. Клиентский JavaScript. Формы и обработка событий
+## [Тема 8. Клиентский JavaScript. Формы и обработка событий](Module_2/loschenkov_JSBasics_8)

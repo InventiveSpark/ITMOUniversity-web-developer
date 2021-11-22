@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;8.3. Динамическое изменение значений элементов списка</title>
+    <style>
+        .typeOfVehicles label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="cars" action="http://www.jimkeogh.com" method="post">
+        <!--Раскрываю­щийся список, пункты которого нужно создавать динамически
+            в зависимости от того, что выбрано - машины или мотоциклы: -->
+        <select name="OptionList" size="5">
+            <option value=1>Classic</option>
+            <option value=2>Police Cruiser</option>
+        </select>
+        <!--Список переключателей, позволяющий выбрать между мотоциклами и машинами: -->
+        <div class="typeOfVehicles">
+            <label>
+                <input type="radio" name="vehicles" checked value=1 onclick="ResetOptionList(this.value)">
+                Motorcycles
+            </label>
+            <label>
+                <input type="radio" name="vehicles" value=2 onclick="ResetOptionList(this.value)">
+                Cars
+            </label>
+        </div>
+        <!--Кнопка для отправки данных формы на сервер.
+            Каждый раз по нажатию на кнопку будет вызываться метод preventDefault(),
+            отменяющий действие кнопки по умолчанию. Аналогичного эффекта можно 
+            добиться, задав элементу кнопки атрибут type="button": -->
+        <input name="Submit" value="Submit" type="submit" onclick="event.preventDefault()">
+        <!--Кнопка для возвращения данных формы к первоначальным значениям: -->
+        <input name="Reset" value="Reset" type="reset">
+    </form>
+
+    <script>
+        {
+            "use strict";
+
+            /* Функция buildOptions() принимает первым аргументом объект, 
+               содержащий описание элементов <option> для раскрывающегося
+               списка, который создаётся внутри контейнера <select>, 
+               задаваемого вторым аргументом root. */
+            function buildOptions(objData, root) {
+                /* Очистка контейнера <select> от созданных ранее элементов
+                   <option>: */
+                root.innerHTML = "";
+                // Все свойства объекта перебираются по очереди:
+                for (item in objData) {
+                    /* Создаётся виртуальный DOM-элемент разметки <option>. Тег
+                       <option> определяет отдельные пункты раскрываю­щегося
+                       списка, создаваемого с помощью контейнера <select>.
+                       Элемент <option> исполь­зуется для указания вариан­тов 
+                       ответа, которые может выбрать посетитель сайта. */
+                    let option = document.createElement("option");
+                    /* Атрибут value используется в элементе <option> для 
+                       установки значения, отправляемого на сервер вместе 
+                       с именем выбранно­го элемента. Значение атрибута берётся 
+                       из объекта objData: */
+                    option.value = objData[item].value;
+                    /* Текст, помещенный между тегами <option> и </option>, 
+                       будет выведен на экран как пункт раскрываю­щегося списка 
+                       <select>. Строка берётся из объекта objData: */
+                    option.innerText = objData[item].name;
+                    /* Сформированный элемент <option> добавляется к элементу 
+                       родительского контейнера <select>. 
+                       Метод Element.appendChild() помещает порожденный узел 
+                       в конце списка дочерних узлов: */
+                    root.appendChild(option);
+                }
+            }
+
+            /* Функция перестраивает раскрывающийся список в зависимости от
+               значения своего аргумента: */
+            function ResetOptionList(ElementValue) {
+                /* Объявление константы для получения доступа к форме по её 
+                   имени (атрибуту name = "cars"): */
+                const FORM = document.forms.cars;
+                /* Объект, содержащий описание элементов <option> для 
+                   раскрывающихся списков мотоциклов и машин: */
+                let listCars = {
+                    moto: {
+                        0: {
+                            name: "Classic",
+                            value: 1
+                        },
+                        1: {
+                            name: "Police Cruiser",
+                            value: 2
+                        },
+                        2: {
+                            name: "Harley Davidson",
+                            value: 3
+                        },
+                    },
+                    cars: {
+                        0: {
+                            name: "Ford",
+                            value: 1
+                        },
+                        1: {
+                            name: "Chevy",
+                            value: 2
+                        }
+                    }
+                }
+                // В зависимости от значения аргумента ElementValue:                
+                switch (ElementValue) {
+                    case "1":
+                        /* Если нужно отобразить список мотоциклов, то в функцию
+                           buildOptions() отправляется объект, описывающий 
+                           элементы соответствующего списка мотоциклов, а также 
+                           принадлежащий форме элемент-контейнер <select> c именем 
+                           "OptionList", в котором должен быть построен список: */
+                        buildOptions(listCars.moto, FORM.OptionList);
+                        break;
+                    case "2":
+                        // Если нужно отобразить список машин:
+                        buildOptions(listCars.cars, FORM.OptionList);
+                }
+            }
+
+            //document.forms.cars.Submit.addEventListener("click", () => { event.preventDefault(); }, false);
+        }
+    </script>
+
+</body>
+
+</html>
