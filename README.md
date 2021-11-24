@@ -2,6 +2,8 @@
 
 Практические и самостоятельные работы к курсу «[Веб-разработчик 20.35](https://design.itmo.ru/courses/web_developer_junior/)» от [Университета ИТМО](https://itmo.ru).
 
+Пункты, отмеченные знаком «*» («звездочка»), являются ссылками на другие репозитории.
+
 # [Модуль 1. Основы веб-технологий](Module_1/)
 ## [Тема 1. Введение в HTML. Структура страницы](Module_1/loschenkov_SRSWEB_1)
 ## [Тема 2. Размещение изображений, списков и таблиц](Module_1/loschenkov_SRSWEB_2)
@@ -13,7 +15,7 @@
 ## [Тема 8. CSS-анимация](Module_1/loschenkov_SRSWEB_8)
 ## Тема 9. Подготовка, размещение и поддержка сайта в сети
 ## Тема 10. Гибкая работа со страницами сайта
-## [Итоговое задание к курсу](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_1-final)
+## [Итоговое задание к курсу*](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_1-final)
 
 # [Модуль 2. Основы JavaScript](Module_2/)
 ## [Тема 1. Введение в JavaScript](Module_2/loschenkov_JSBasics_1)
@@ -24,3 +26,14 @@
 ## [Тема 6. Клиентский JavaScript. Объектная модель документа: DOM. Работа с HTML элементами](Module_2/loschenkov_JSBasics_6)
 ## [Тема 7. Клиентский JavaScript. Cookie](Module_2/loschenkov_JSBasics_7)
 ## [Тема 8. Клиентский JavaScript. Формы и обработка событий](Module_2/loschenkov_JSBasics_8)
+## Итоговый тест
+
+# [Модуль 3. Современные технологии верстки]
+## [Тема 1. CSS-фреймворки]
+## [Тема 2. Контейнеры. Система сеток Bootstrap]
+## [Тема 3. Оформление HTML-элементов]
+## [Тема 4. Компоненты Bootstrap]
+## [Тема 5. Формы]
+## [Тема 6. Встраивание медиа-файлов]
+## [Тема 7. Flexbox. Сетка Flexbox]
+## [Тема 8. JavaScript и события Bootstrap]

@@ -36,18 +36,26 @@
                 return a * b;
             }
             function Wages() {
-                /* Перевод в десятичную систему счисления строковых данных, введенных
-                   пользователем в текстовые полях ввода: */
-                let oldWages = parseInt(document.getElementById("oldW").value, 10);
-                let coefficientWages = parseInt(document.getElementById("coefficientW").value, 10);
+                /* Перевод в десятичные числа с плавающей точкой строковых данных,
+                   введённых пользователем в текстовые полях ввода: */
+                let oldWages = parseFloat(document.getElementById("oldW").value);
+                let coefficientWages = parseFloat(document.getElementById("coefficientW").value);
                 /* Метод Number.isNaN() определяет, является ли переданное значение
                    NaN. Это более надёжная версия оригинальной глобальной функции 
                    isNaN(). Метод возвращает true только для числовых значений, 
                    имеющих значение NaN: */
                 if (Number.isNaN(oldWages) || Number.isNaN(coefficientWages))
                     alert("Пожалуйста, введите числовые данные!");
+                else if (oldWages <= 0 || coefficientWages <= 0)
+                    alert("Пожалуйста, введите положительные действительные числа!");
                 else {
                     let newWages = multiplication(oldWages, coefficientWages);
+                    /* Функция Math.round производит округление до ближайшего 
+                       целого. Положительные числа, дробная часть которых ≥ 0.5, 
+                       и отрицательные числа с дробной частью > 0.5 округляются 
+                       с избытком. Использование множителя 100 позволяет произвести
+                       округление до двух знаков после запятой (копеек): */
+                    newWages = Math.round(newWages * 100) / 100;
                     let date = document.getElementById("date").innerHTML;
                     document.getElementById("newW").innerHTML = "Ваша новая зарплата " + newWages + " рублей. " + date;
                 }
