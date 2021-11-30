@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;3.1. Работа с текстом</title>
+    <!--Подключение стилевых файлов: -->
+    <!--Файл Bootstrap со стилями адаптивной сетки из 12 колонок. Он также содержит
+        библиотеку сброса Reboot.css, основанную на Normalize.css. Bootstrap 
+        использует её для сброса стилей браузера по умолчанию и придания 
+        веб-страницам единообразного вида: -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Файл со стилями пользователя загружается последним и может переопределить стили любых
+        библиотек: -->
+    <link rel="stylesheet" href="styles/styles1.css">
+    <!--Подключение библиотек JavaScript (Bootstrap Bundle with Popper). 
+        Атрибут defer откладывает выполнение скрипта до тех пор, пока 
+        вся страница не будет загружена полностью: -->
+    <!--
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    -->
+</head>
+
+<body>
+    <!--Контейнер содержит в себе строки (блоки с классом row) и ограничивает сетку по ширине: -->
+
+    <!--container имеет фиксированную максимальную ширину max-width в контрольных точках (в заранее 
+        указанных значениях ширины экрана) и расширяется на всю ширину только на очень маленьких 
+        устройствах. Т.е. его ширина изменяется ступенчато: -->
+    <div class="container py-4 px-3">
+        <!--Строки находятся внутри контейнера. Колонки, находящиеся в одной строке, оборачиваются 
+            в блок с классом row: -->
+        <div class="row">
+            <!--Внутри строк находятся модули. -->
+            <div class="col-12 pb-1 h1">
+                Twitter<span class="small text-muted">Twitter&nbsp;Bootstrap</span>
+            </div>
+        </div>
+        <!--Для того, чтобы следующий модуль всегда размещался с новой строки, нужно включить его внутрь 
+            нового блока с классом row: -->
+        <div class="row">
+            <div class="col-12 col-sm-5 col-md-3 col-xl-2 pb-sm-4 text-sm-end fw-bold">
+                Twitter Bootstrap
+            </div>
+            <div class="col-12 col-sm-7 col-md-9 col-xl-10 pb-4">
+                Свободный набор инструментов для создания сайтов и&nbsp;веб-приложений
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                Включает в&nbsp;себя <abbr
+                    title="HyperText Markup Language&nbsp;&mdash; язык гипертекстовой разметки">HTML</abbr>-и&nbsp;<abbr
+                    title="Cascading Style Sheets&nbsp;&mdash; каскадные таблицы стилей">CSS</abbr>-шаблоны оформления
+                для типографики, веб-форм, <kbd>кнопок</kbd>, меток, блоков навигации и&nbsp;прочих компонентов
+                веб-интерфейса, включая JavaScript-расширения.
+                <br>Сетки&nbsp;&mdash; заранее заданные размеры колонок, которые можно сразу&nbsp;же использовать,
+                например, ширина колонки 140px относится к&nbsp;классу .span2, который можно использовать
+                в&nbsp;CSS-описании документа.
+                <br>Типографика&nbsp;&mdash; описания шрифтов, определение некоторых классов для шрифтов, таких как код,
+                цитаты и&nbsp;т.&nbsp;п.
+                <br>Медиа&nbsp;&mdash; предоставляет некоторое управление изображениями и&nbsp;видео.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+/* Стилизация контейнера: */
+.container {
+    color: #fff;
+    background-color: #FF8000;
+}
+
+/* Переопределение размера шрифта для класса small: */
+.small {
+    font-size: 65%;
+}
