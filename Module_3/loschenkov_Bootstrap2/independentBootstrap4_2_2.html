@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Самостоятельная работа &#8470;2.2. Создание средней резиновой модульной сетки для версии Bootstrap 4</title>
+    <!--Подключение стилевых файлов: -->
+    <!--Файл Bootstrap со стилями адаптивной сетки из 12 колонок. Он также содержит
+        библиотеку сброса Reboot.css, основанную на Normalize.css. Bootstrap 
+        использует её для сброса стилей браузера по умолчанию и придания 
+        веб-страницам единообразного вида: -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!--Файл со стилями пользователя загружается последним и может переопределить стили любых
+        библиотек: -->
+    <link rel="stylesheet" href="styles2.css">
+    <!--JavaScript библиотека jQuery (jQuery должна подключаться перед файлами 
+        плагинов). Атрибут defer откладывает выполнение скрипта до тех пор, 
+        пока вся страница не будет загружена полностью: -->
+    <!--
+    <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    -->
+    <!--Подключение библиотек JavaScript (Bootstrap Bundle with Popper).  -->
+    <!--
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    -->
+</head>
+
+<body>
+    <!--Контейнер содержит в себе строки (блоки с классом row) и ограничивает сетку по ширине: -->
+
+    <!--container-fluid занимает всю доступную область просмотра при любых значениях ширины экрана.
+        Это т.н. «гибкий» или «резиновый» контейнер: -->
+    <div class="container-fluid">
+        <!--Строки находятся внутри контейнера. Колонки, находящиеся в одной строке, оборачиваются 
+            в блок с классом row: -->
+        <div class="row">
+            <div class="col-12">
+                Основной
+            </div>
+            <div class="col-md-2 highlighted">
+                .col-md-2
+            </div>
+            <!--Сдвиг модуля вправо на 3 колонки. Классы вида offset-md-* увеличивают левый отступ
+                модуля на * колонок. -->
+            <div class="col-md-2 offset-md-3 highlighted">
+                .col-md-2
+            </div>
+            <!--Сдвиг модуля вправо на 3 колонки: -->
+            <div class="col-md-2 offset-md-3 highlighted">
+                .col-md-2
+            </div>
+            <div class="col-12">
+                &nbsp;
+            </div>
+        </div>
+        <!--Для того, чтобы следующий модуль всегда размещался с новой строки, нужно включить его внутрь 
+            нового блока с классом row: -->
+        <div class="row">
+            <div class="col-12">
+                Основной 2
+            </div>
+            <!--Сдвиг модуля вправо на 10 колонок: -->
+            <div class="col-md-2 offset-md-10 highlighted">
+                .col-md-2
+            </div>
+            <div class="col-md-2 highlighted">
+                .col-md-2
+            </div>
+            <div class="col-md-2 highlighted">
+                .col-md-2
+            </div>
+            <div class="col-12">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+
+    <!--При уменьшении ширины экрана ниже контрольной точки medium (992px для Bootstrap 3 
+        и 768px для Bootstrap 4 и 5) модули будут расширены на всю ширину экрана (поведение
+        по умолчанию), т.е. построятся в стопку по одному в ряд. -->
+</body>
+
+</html>
