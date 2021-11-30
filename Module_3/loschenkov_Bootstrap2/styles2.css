@@ -1,12 +1,13 @@
 /* Стилизация строки: */
 .row {
-    background-color: #FFBC75;
-    color: white;
-    border-bottom: 1px solid white;
+    background-color: #FFB871;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
 }
 
 /* Стилизация выбранных модулей: */
 .highlighted {
-    border: 1px solid #FFCD75;
-    background-color: #FB8100;
+    border: 1px solid #fff;
+    background-color: #FF8000;
 }

@@ -1,6 +1,6 @@
 /* Стилизация модулей внутри строки: */
 .row>div {
-    border: 1px solid #FFCD75;
-    background-color: #FD8000;
+    border: 1px solid #fff;
+    background-color: #FF8000;
     height: 25px;
 }
