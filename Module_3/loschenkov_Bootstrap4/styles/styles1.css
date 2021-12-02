@@ -1,0 +1,10 @@
+/* Переопределение стиля кнопки: */
+.btn-light {
+    background-color: #F3F4F5;
+}
+
+/* Переопределение стиля кнопки при наведении курсора: */
+.btn-light:hover {
+    background-color: #E6E6E6;
+    border-color: #aaa;
+}

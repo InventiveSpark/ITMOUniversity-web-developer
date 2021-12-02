@@ -1,0 +1,5 @@
+/* Переопределение стиля кнопки выпадающего меню при наведении курсора: */
+.nav-link.dropdown-toggle:hover {
+    background-color: #E6E6E6;
+    border-radius: .25rem;
+}
