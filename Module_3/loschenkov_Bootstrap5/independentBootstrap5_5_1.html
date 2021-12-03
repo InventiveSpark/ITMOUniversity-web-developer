@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;5.1. Создание формы</title>
+    <!--Подключение стилевых файлов: -->
+    <!--Файл Bootstrap со стилями адаптивной сетки из 12 колонок. Он также содержит
+        библиотеку сброса Reboot.css, основанную на Normalize.css. Bootstrap 
+        использует её для сброса стилей браузера по умолчанию и придания 
+        веб-страницам единообразного вида: -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Файл со стилями пользователя загружается последним и может переопределить стили любых
+        библиотек: -->
+    <link rel="stylesheet" href="styles.css">
+    <!--Подключение библиотек JavaScript (Bootstrap Bundle with Popper). 
+        Атрибут defer откладывает выполнение скрипта до тех пор, пока 
+        вся страница не будет загружена полностью: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Контейнер содержит в себе строки (блоки с классом row) и ограничивает сетку по ширине: -->
+
+    <!--container имеет фиксированную максимальную ширину max-width в контрольных точках (в заранее 
+        указанных значениях ширины экрана) и расширяется на всю ширину только на очень маленьких 
+        устройствах. Т.е. его ширина изменяется ступенчато: -->
+    <div class="container">
+        <!--Строки находятся внутри контейнера. Колонки, находящиеся в одной строке, оборачиваются 
+            в блок с классом row: -->
+        <div class="row">
+            <!--Внутри строк находятся модули. -->
+            <div class="col-12 d-flex justify-content-center">
+                <!--Карточка - это контейнер с облегчённым стилем, в который можно поместить 
+                    практически любое содержимое. Для карточек доступно множество вариантов стилей, 
+                    таких как выравнивание, отступы, цвета, контекстуальные фоновые цвета, заголовки,
+                    футеры, и многое другое. Стилизация и расширенная функциональность доступна для 
+                    карточек в виде классов-модификаторов. Создаётся панель, построенная на основе 
+                    блочного элемента с классом card и дополнительного класса card-body, который 
+                    определяет стандартный вид панели, либо вложенного элемента с этим классом: -->
+                <div class="card bg-light my-3 card-custom">
+                    <div class="card-body">
+                        <!--Названия карточки создаётся добавлением класса card-title к тэгу <h*>. -->
+                        <h5 class="card-title mb-3">Welcome Back</h5>
+                        <form>
+                            <div class="mb-2">
+                                <!--Метки форм требуют задания им класса form-label. Размер метки задан
+                                    добавлением класса small, задающего стиль, одинаковый с тэгом <small>,
+                                    но помогающего избежать нежелательных семантических последствий, которые
+                                    могут возникнуть с тэгами. -->
+                                <label for="inputUsername" class="form-label small mb-0">Username</label>
+                                <!--Класс form-control применяется для текстовых элементов <input>, 
+                                    <textarea> и <select> для того, чтобы задать им ширину 100%. 
+                                    Дополнительные классы form-control-lg и form-control-sm применяются 
+                                    для увеличения или уменьшения размера полей ввода. -->
+                                <input type="text" class="form-control form-control-sm" id="inputUsername" required
+                                    placeholder="Username" maxlength="50">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword" class="form-label small mb-0">Password</label>
+                                <input type="password" class="form-control form-control-sm" id="inputPassword" required
+                                    placeholder="Password" maxlength="50">
+                            </div>
+                            <!--Для того, чтобы отобразить флажки или переключатели рядом друг с другом, 
+                                они вкладываются в элемент <div> с классом form-check. -->
+                            <div class="mb-2 form-check">
+                            <!--Кроме того, добавляется класс form-check-label к элементу <label> 
+                                и form-check-input к элементу <input>. -->
+                                <input type="checkbox" class="form-check-input" id="rememberCheck">
+                                <label class="form-check-label small" for="rememberCheck">Remember&nbsp;me</label>
+                            </div>
+                            <!--Класс d-flex применяется для создания контейнера с элементами FlexBox, т.е. 
+                                все прямые дочерние элементы контейнера будут трансформированы в «гибкие». 
+                                К гибким контейнерам и элементам можно применять дополнительные свойства. 
+                                Так, класс justify-content, применённый к контейнеру, изменяет выравнивание 
+                                гибких элементов по главной оси (ось х по умолчанию, ось у - если 
+                                flex-direction: column). -->
+                            <div class="mb-3 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-dark btn-sm">Login</button>
+                            </div>
+                            <hr>
+                            <!--Выравнивание текста задаётся с помощью соответствующего класса выравнивания
+                                text‐center. -->
+                            <div class="text-center small">
+                                Have not account yet? <a href="#">Signup</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
