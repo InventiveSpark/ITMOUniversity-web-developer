@@ -27,7 +27,7 @@ function buildNames(namesList, selector) {
        формы), принадлежащих классу selector: */
     const PARENTS = document.getElementsByClassName(selector);
     /* Для каждого из элементов коллекции, принадлежащих классу selector, */
-    for (parent of PARENTS) { // Можно использовать также for (let i = 0; i < PARENTS.length; i++) {...PARENTS[i]...}
+    for (let parent of PARENTS) { // Можно использовать также for (let i = 0; i < PARENTS.length; i++) {...PARENTS[i]...}
         /* проверяется, является ли он упорядоченным (тег <ol>) или 
            неупорядоченным списком (тег <ul>). Если является, */
         if (parent.tagName === "UL" || parent.tagName === "OL") {

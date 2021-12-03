@@ -44,7 +44,7 @@ function setStyle(fontColor, fontSize) {
     const PARENTS = document.getElementsByClassName("listNumbers");
 
     // Для каждого из элементов, принадлежащих классу "listNumbers",
-    for (parent of PARENTS) { // Можно использовать также for (let i = 0; i < PARENTS.length; i++) {...PARENTS[i]...}
+    for (let parent of PARENTS) { // Можно использовать также for (let i = 0; i < PARENTS.length; i++) {...PARENTS[i]...}
         /* нужно получить список дочерних элементов разметки, таких как <li>, 
            <а>, <р> и <body>. Это можно сделать двумя способами: */
 
@@ -89,7 +89,7 @@ function setStyle(fontColor, fontSize) {
                      Метод возвращает объект HTMLCollection (коллекцию): */
         let childElements = parent.children;
         // Для каждого из дочерних элементов разметки
-        for (child of childElements) { // Можно использовать также for (let j = 0; j < childElements.length; j++) {...childElements[j]...}
+        for (let child of childElements) { // Можно использовать также for (let j = 0; j < childElements.length; j++) {...childElements[j]...}
             // устанавливаются стилевые свойства
             setElementStyle(child, fontColor, fontSize)
             console.log("Обработка элемента из коллекции.",

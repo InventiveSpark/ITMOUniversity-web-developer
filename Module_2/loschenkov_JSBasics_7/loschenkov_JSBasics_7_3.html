@@ -30,7 +30,7 @@
                    каждого cookie-набора: */
                 let cookiesList = document.cookie.split("; ");
                 /* Для каждого cookie-набора из массива: */
-                for (cookie of cookiesList) // Можно использовать также for (let i = 0; i < cookiesList.length; i++) {...cookiesList[i]...}
+                for (let cookie of cookiesList) // Можно использовать также for (let i = 0; i < cookiesList.length; i++) {...cookiesList[i]...}
                 {
                     /* Метод indexOf получает строку-аргумент и возвращает индекс 
                        первого символа первого вхождения аргумента в своей строке. 
