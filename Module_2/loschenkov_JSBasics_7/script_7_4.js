@@ -15,7 +15,7 @@ function getCookies() {
            на выходе отдаёт значение. */
         tmp = tmp + "login : " + Cookies.get("login") + "<br>";
     }
-    // Проверяется наличие cookie-набора login
+    // Проверяется наличие cookie-набора password
     if (typeof Cookies.get("password") !== "undefined") {
         /* Если он существует, то набор сохраняется в переменную tmp 
            со следующим форматом:
@@ -25,28 +25,12 @@ function getCookies() {
            выходе отдаёт значение. */
         tmp = tmp + "password : " + Cookies.get("password");
     }
-    // Сформированная строка присваивается параграфу с классом "saveCookie":
+    /* Сформированная строка присваивается параграфу с классом "saveCookie": */
     document.getElementsByClassName("saveCookie")[0].innerHTML = tmp;
 }
 
-/* Функция login(), помеченная ключевым словом async, отвечает за обработку
-   формы. Ключевое слово async можно применять к:
-    * стрелочным функциям:
-        async url => { ... }
-        async (url, params) => { ... }
-    * методам:
-        class ImageLoader {
-            async load(url) { ... }
-        }
-    * именованным и анонимным функциям:
-        async function loadImage(url) { ... }
-        async function(url) { ... } 
-    *  методам объектных литералов: 
-        obj = {
-            async loadImage(url) { ... },
-        ...
-        } */
-let login = async () => {
+/* Функция login() отвечает за обработку формы. */
+const login = () => {
     // В переменные записываются данные из полей ввода логина и пароля:
     let username = document.getElementById("login").value;
     let password = document.getElementById("password").value;
@@ -73,18 +57,6 @@ let login = async () => {
         Cookies.set("password", password);
         /* Вывод в параграф с классом "saveCookie" строки с сохраненными 
            cookie-наборами: */
-        await getCookies();
-        /* Оператор await может встречаться только в функции, помеченной 
-           ключевым словом async. Компилятор преобразует код функции async 
-           таким образом, что любые действия, следующие за оператором await, 
-           выполняются после того, как обещание (promise) разрешится. Идея 
-           оператора await в том и заключается, чтобы мы могли работать со 
-           значениями, а не с обещаниями. Выражение await promise дожидается
-           улаживания обещания и возвращает его значение.
-           Promise (обычно их так и называют "промисы") – предоставляют удобный
-           способ организации отложенных и асинхронных вычислений. Promise 
-           - это специальный объект, который содержит своё состояние. 
-           Вначале pending ("ожидание"), затем – одно из: fulfilled ("выполнено
-           успешно") или rejected ("выполнено с ошибкой"). */
+        getCookies();
     }
 }
