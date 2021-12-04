@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;6.1. Встраивание медиа-файлов</title>
+    <!--Подключение стилевых файлов: -->
+    <!--Файл Bootstrap со стилями адаптивной сетки из 12 колонок. Он также содержит
+        библиотеку сброса Reboot.css, основанную на Normalize.css. Bootstrap 
+        использует её для сброса стилей браузера по умолчанию и придания 
+        веб-страницам единообразного вида: -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Файл со стилями пользователя загружается последним и может переопределить стили любых
+        библиотек: -->
+    <link rel="stylesheet" href="styles.css">
+    <!--Подключение библиотек JavaScript (Bootstrap Bundle with Popper). 
+        Атрибут defer откладывает выполнение скрипта до тех пор, пока 
+        вся страница не будет загружена полностью: -->
+    <!--
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    -->
+</head>
+
+<body>
+    <!--Контейнер содержит в себе строки (блоки с классом row) и ограничивает сетку по ширине: -->
+
+    <!--container имеет фиксированную максимальную ширину max-width в контрольных точках (в заранее 
+        указанных значениях ширины экрана) и расширяется на всю ширину только на очень маленьких 
+        устройствах. Т.е. его ширина изменяется ступенчато: -->
+    <div class="container">
+        <!--Строки находятся внутри контейнера. Колонки, находящиеся в одной строке, оборачиваются 
+            в блок с классом row: -->
+        <div class="row">
+            <!--Внутри строк находятся модули. -->
+            <div class="col-12">
+                <!--Класс d-flex применяется для создания контейнера с элементами FlexBox, т.е. 
+                    все прямые дочерние элементы контейнера будут трансформированы в «гибкие». 
+                    К гибким контейнерам и элементам можно применять дополнительные свойства. -->
+                <div class="d-flex comment">
+                    <!--CSS свойство flex-shrink устанавливает коэффициент сжатия гибкого элемента 
+                        в контейнере и задаёт, насколько элемент будет уменьшаться по отношению 
+                        к другим гибким элементам в гибком контейнере, чтобы разместить все элементы 
+                        в одну строку, в тех случаях, когда для него недостаточно места в этом самом
+                        контейнере. flex-shrink используется вместе с flex-свойствами flex-grow 
+                        и flex-basis. Обычно определяется с помощью сокращения flex.
+                        Гибкий элемент с классом flex-shrink-0 принудительно сжимается и оставляет 
+                        больше места для следующего гибкого элемента с классом flex-grow-1. -->
+                    <div class="flex-shrink-0">
+                        <img src="avatar.svg" alt="Вася Пупкин" class="avatar">
+                    </div>
+                    <!--CSS свойство flex-grow определяет, сколько пространства может занимать гибкий 
+                        элемент внутри контейнера. В качестве значения принимаются числа, они задают 
+                        пропорции каждого флекса. К примеру, если для всех элементов установлено 
+                        значение 1, то они получатся равного размера. Если какой-то элемент получил 
+                        значение 2, то его размер будет в два раза больше остальных. Т.е. свободное 
+                        место между гибкими элементами распределяется в соответствии с соотношением, 
+                        определённым различными коэффициентами flex-grow.
+                        На практике flex-grow используется вместе с другими flex-свойствами 
+                        flex-shrink и flex-basis, и обычно определяется с помощью сокращения flex, 
+                        чтобы убедиться, что все значения заданы.
+                        Элемент класса flex-grow-1 использует всё доступное место, которое может, 
+                        но при этом остаётся необходимое место для второго гибкого элемента: -->
+                    <div class="flex-grow-1 ms-3">
+                        <h5><a href="#" class="">Вася Пупкин</a></h5>
+                        Cras sit amet nibh libero, in&nbsp;gravida nulla. Nulla vel metus scelerisque ante
+                        sollicitudin commodo. Cras purus odio, vestibulum in&nbsp;vulputate&nbsp;at, tempus viverra
+                        turpis. Fusce condimentum nunc ac&nbsp;nisi vulputate fringilla. Donec lacinia congue felis
+                        in&nbsp;faucibus.
+                        <br><a href="#">Ответить</a>
+                    </div>
+                </div>
+
+                <div class="d-flex comment">
+                    <div class="flex-shrink-0">
+                        <img src="avatar.svg" alt="Петя Васечкин" class="avatar">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5><a href="#" class="">Петя Васечкин</a></h5>
+                        Cras sit amet nibh libero, in&nbsp;gravida nulla. Nulla vel metus scelerisque ante
+                        sollicitudin commodo. Cras purus odio, vestibulum in&nbsp;vulputate&nbsp;at, tempus viverra
+                        turpis. Fusce condimentum nunc ac&nbsp;nisi vulputate fringilla. Donec lacinia congue felis
+                        in&nbsp;faucibus.
+                        <br><a href="#">Ответить</a>
+                    </div>
+                </div>
+
+                <div class="d-flex replyToComment">
+                    <div class="flex-shrink-0">
+                        <img src="avatar.svg" alt="Вася Пупкин" class="avatar">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5><a href="#" class="">Вася Пупкин</a></h5>
+                        Cras sit amet nibh libero, in&nbsp;gravida nulla. Nulla vel metus scelerisque ante
+                        sollicitudin commodo. Cras purus odio, vestibulum in&nbsp;vulputate&nbsp;at, tempus viverra
+                        turpis. Fusce condimentum nunc ac&nbsp;nisi vulputate fringilla. Donec lacinia congue felis
+                        in&nbsp;faucibus.
+                        <br><a href="#">Ответить</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -34,6 +34,6 @@
 ## [Тема 3. Оформление HTML-элементов](Module_3/loschenkov_Bootstrap3)
 ## [Тема 4. Компоненты Bootstrap](Module_3/loschenkov_Bootstrap4)
 ## [Тема 5. Формы](Module_3/loschenkov_Bootstrap5)
-## [Тема 6. Встраивание медиа-файлов]
+## [Тема 6. Встраивание медиа-файлов](Module_3/loschenkov_Bootstrap6)
 ## [Тема 7. Flexbox. Сетка Flexbox]
 ## [Тема 8. JavaScript и события Bootstrap]
