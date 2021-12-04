@@ -2,7 +2,7 @@
 :root {
     /* Ширина картинки пользователя: */
     --user-avatar: 70px;
-    /* Ширина внешнего отступа между картинкой пользователя 
+    /* Ширина отступа между картинкой пользователя 
        и текстом комментария: */
     --avatar-text-indent: 1rem;
     /* Высота отступа над комментарием: */
@@ -14,14 +14,17 @@
     margin-top: var(--comment-margin);
 }
 
-/* Внешний отступ над ответом на комментарий: */
+/* Ответ на комментарий */
 .replyToComment {
+    /* Внешний отступ над ответом на комментарий: */
     margin-top: calc(var(--comment-margin) * 0.77);
+    /* Внешний отступ слева перед ответом на комментарий: */
+    margin-left: calc(var(--user-avatar) + var(--avatar-text-indent));
 }
 
-/* Внешний отступ слева перед ответом на комментарий: */
-.replyToComment {
-    margin-left: calc(var(--user-avatar) + var(--avatar-text-indent));
+/* Отступ между картинкой пользователя и текстом комментария: */
+.comment>.flex-grow-1, .replyToComment>.flex-grow-1 {
+    margin-left: var(--avatar-text-indent);
 }
 
 /* Размеры картинки пользователя: */
