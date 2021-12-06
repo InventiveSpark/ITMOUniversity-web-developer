@@ -11,9 +11,9 @@
     /* Фоновый цвет, отображаемый за пределами основной страницы: */
     --background-color: lightslategray;
     /* Фоновый цвет шапки и подвала: */
-    --header-footer-background-color: #9ACD32;
+    --header-footer-background-color: yellowgreen;
     /* Фоновый цвет боковых колонок: */
-    --aside-background-color: #F4F4DB;
+    --aside-background-color: beige;
     /* Фоновый цвет списка статей: */
     --article-background-color: white;
 }

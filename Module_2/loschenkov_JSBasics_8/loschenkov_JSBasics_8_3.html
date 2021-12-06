@@ -46,7 +46,18 @@
             EventTarget.addEventListener('имя_события', функция_слушатель), 
             который добавляет функцию-слушатель события, вызванного EventTarget
             (в данном случае "click" - события нажатия на кнопку), а в самой 
-            функции-слушателе использовать метод preventDefault(). -->
+            функции-слушателе использовать метод preventDefault().
+            Событие click возникает, когда пользователь кликает на элемент. Событие 
+            click возникнет после событий mousedown и mouseup. С данным свойством
+            объекту может быть назначен только один обработчик события: 
+            domElement.onclick() = funс;
+            Вместо данного метода лучше обратить внимание на метод 
+            EventTarget.addEventListener(), 
+            т.к. он более гибкий и является частью спецификации DOM Events.
+            Но, по сути, 
+            let domElement = document.forms.cars.Submit;
+            domElement.onclick() = funс;
+            даст тот же эффект, что и domElement.addEventListener("click", func); -->
         <input name="Submit" value="Submit" type="submit" onclick="event.preventDefault()">
         <!--Кнопка для возвращения данных формы к первоначальным значениям: -->
         <input name="Reset" value="Reset" type="reset">
