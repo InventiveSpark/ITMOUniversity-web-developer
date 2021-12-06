@@ -36,4 +36,5 @@
 ## [Тема 5. Формы](Module_3/loschenkov_Bootstrap5)
 ## [Тема 6. Встраивание медиа-файлов](Module_3/loschenkov_Bootstrap6)
 ## [Тема 7. Flexbox. Сетка Flexbox](Module_3/loschenkov_Bootstrap7)
-## [Тема 8. JavaScript и события Bootstrap]
+## Тема 8. JavaScript и события Bootstrap
+## Итоговое задание к курсу
