@@ -1,0 +1,415 @@
+/* Подключение стилевых файлов:
+   Библиотека сброса Reboot.css, основанная на Normalize.css. Bootstrap
+   использует её для сброса стилей браузера по умолчанию и придания
+   веб-страницам единообразного вида:  */
+@import url("../styles/bootstrap-reboot.min.css");
+
+/* Подключение шрифтов: */
+
+@font-face {
+    font-family: "HelveticaNeueCyr-Thin";
+    src: url("../fonts/HelveticaNeueCyr-Thin.ttf");
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyr-Light";
+    src: url("../fonts/HelveticaNeueCyr-Light.ttf");
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyr-Medium";
+    src: url("../fonts/HelveticaNeueCyr-Medium.ttf");
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyr-Bold";
+    src: url("../fonts/HelveticaNeueCyr-Bold.ttf");
+}
+
+@font-face {
+    font-family: "ArialMT";
+    src: url("../fonts/ArialMT.ttf");
+}
+
+
+html {
+    background-color: #282828;
+}
+
+body {
+    color: #ffffff;
+    background-color: #040440;
+    width: 1920px;
+    margin: 0 auto;
+}
+
+
+/* Контейнер: */
+
+.container {
+    padding: 0 60px 0 358px;
+}
+
+
+/* Шапка с навигационной панелью (Header with Navigation Bar): */
+
+.header {
+    height: 88px;
+}
+
+.header__container {
+    background-color: #040440;
+    padding-left: 105px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header__caption {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "ArialMT";
+    text-transform: uppercase;
+    line-height: 21px;
+    letter-spacing: -0.3px;
+    margin-top: -2px;
+}
+
+/* Навигационная панель (Navigation Bar): */
+
+.nav {
+    font-family: "HelveticaNeueCyr-Light";
+}
+
+.header__nav {
+    font-size: 23px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding-left: 603px;
+    margin-top: -9px;
+}
+
+.nav__menu {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__item_wide {
+    transform: scaleX(1.06);
+}
+
+.nav__item_spacer-header:not(:last-child) {
+    padding-right: 87px;
+}
+
+.nav__item_spacer-header:last-child {
+    margin-left: -3px;
+}
+
+.nav__link, .nav__link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Кнопка: */
+
+.button {
+    background-color: #c93555;
+    transition: background-color 0.3s ease-in-out;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #db2345;
+    color: #ffffff;
+}
+
+.button_small {
+    display: block;
+    width: 257px;
+    height: 73px;
+    border-radius: 40px;
+    padding-left: 57px;
+    padding-top: 15px;
+    overflow: hidden;
+    font-size: 23px;
+    font-family: "HelveticaNeueCyr-Light";
+    font-weight: 600;
+    letter-spacing: 0.7px;
+}
+
+.button_big {
+    width: 537px;
+    height: 155px;
+    border-radius: 30px;
+    text-align: center;
+    outline: 1px dashed #000000;
+    outline-offset: -1px;
+    padding-top: 35px;
+    overflow: hidden;
+    font-size: 30px;
+    font-family: "HelveticaNeueCyr-Bold";
+    line-height: 36px;
+}
+
+.header__button {
+    text-transform: uppercase;
+    margin-top: -1px;
+    margin-left: 123px;
+}
+
+
+/* Заголовки разделов */
+
+.caption {
+    color: #ffffff;
+    font-family: "HelveticaNeueCyr-Bold";
+    margin-bottom: 0;
+}
+
+.caption_red-mark {
+    border-left: 8px solid #c93555;
+    padding-left: 12.5px;
+    padding-top: 2.5px;
+    font-size: 30px;
+    height: 65px;
+}
+
+
+/* Разделы: */
+
+
+/* Запись на курс (Sign Up): */
+
+.sign-up {
+    height: 893px;
+}
+
+.sign-up__container {
+    background: #000033 url("../img/sign-up/background.png") no-repeat 0 -88px;
+    height: 100%;
+    padding: 178px 897px 0 351px;
+}
+
+.sign-up__tag {
+    display: inline-block;
+    color: #c93555;
+    font-size: 24px;
+    font-family: "HelveticaNeueCyr-Light";
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-top: 8px solid;
+    margin-left: -2.5px;
+    margin-bottom: 43px;
+    padding-top: 7px;
+    transform: scaleX(0.89);
+}
+
+.sign-up__caption {
+    color: #ffffff;
+    font-family: "HelveticaNeueCyr-Bold";
+    letter-spacing: 1.3px;
+    transform: scaleX(0.955);
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-left: -9px;
+    margin-bottom: 39px;
+}
+
+.sign-up__tagline {
+    color: #ffffff;
+    font-family: "HelveticaNeueCyr-Medium";
+    font-size: 24px;
+    transform: scaleX(0.985);
+    margin-left: 2px;
+    margin-bottom: 82px;
+}
+
+.sign-up__button {
+    margin-left: 5px;
+    width: 250px;
+    transform: scaleX(1.028);
+}
+
+.sign-up__row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 52px;
+    margin-left: 8px;
+}
+
+.feature {
+    color: #ffffff;
+    font-size: 23px;
+    font-family: "HelveticaNeueCyr-Light";
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+
+.feature__header {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "HelveticaNeueCyr-Thin";
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-left: -2px;
+    margin-bottom: 2px;
+}
+
+
+/* Описание специальности (Description of Specialty): */
+
+.specialty {
+    height: 682px;
+}
+
+.specialty__container {
+    background: #040440 url("../img/specialty/system_administrator.png") no-repeat 396px 100px;
+    height: 100%;
+    padding: 90px 140px 0 963px;
+}
+
+.specialty__caption {
+    margin-bottom: 33px;
+}
+
+.specialty__caption_wide {
+    transform: scaleX(1.017);
+}
+
+.text {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: "HelveticaNeueCyr-Thin";
+    line-height: 36px;
+    letter-spacing: 0.05px;
+}
+
+.specialty__text {
+    padding-left: 13px;
+}
+
+
+/* О курсе (About Section): */
+
+.about {
+    height: 824px;
+}
+
+.about__container {
+    background-color: #130b5b;
+    height: 100%;
+    padding: 69px 381px 0 351px;
+}
+
+.about__caption {
+    padding-left: 6px;
+    margin-bottom: 33px;
+}
+
+.about__caption_second {
+    padding-top: 12px;
+    margin-bottom: 16px;
+}
+
+.about__text {
+    padding-left: 6px;
+    margin-bottom: 41px;
+}
+
+.about__text_narrow {
+    letter-spacing: -1.25px;
+}
+
+.about__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__block_second {
+    width: 650px;
+}
+
+.about__button {
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
+/* Подвал (Footer) с контактами (Contacts): */
+
+.footer {
+    height: 110px;
+}
+
+.footer__container {
+    background-color: #080742;
+    padding-right: 200px;
+    padding-bottom: 5px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+/* Навигационная панель с социальными сетями (Social Media Navigation Bar): */
+
+.footer__nav {
+    font-size: 0;
+    padding-bottom: 8px;
+}
+
+.footer__icon {
+    fill: #c93555;
+}
+
+.footer__icon:hover {
+    fill: #db2345;
+}
+
+.nav__item_spacer-footer {
+    padding-right: 21.5px;
+}
+
+.footer__address {
+    margin-bottom: 4px;
+    margin-left: 122px;
+    line-height: 29px;
+}
+
+.footer__address, .footer__link {
+    color: #ffffff;
+    font-size: 24px;
+    font-family: "HelveticaNeueCyr-Thin";
+    word-spacing: -1.9px;
+}
+
+.footer__link {
+    margin-bottom: 25px;
+}
+
+.footer__link, .footer__link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer__link_spacer-email {
+    margin-left: 104px;
+}
+
+.footer__link_spacer-phone {
+    margin-left: 202px;
+}
+
+.footer__link_narrow {
+    transform: scaleX(0.97);
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самостоятельная работа &#8470;1. Принципы организации CSS</title>
+
+    <!--Подключение стилевых файлов: -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+
+    <!--Шапка с навигационной панелью (Header with Navigation Bar) -->
+
+    <header class="header">
+
+        <div class="header__container container">
+
+            <div class="header__caption">
+                Курсы профессиональной<br>переподготовки
+            </div>
+
+            <!--Навигационная панель (Navigation Bar) -->
+            <nav class="header__nav nav">
+                <ul class="nav__menu">
+                    <li class="nav__item nav__item_spacer-header">
+                        <a class="nav__link" href="#">
+                            О&nbsp;нас
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item_spacer-header">
+                        <a class="nav__link" href="#about">
+                            О&nbsp;курсе
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item_spacer-header nav__item_wide">
+                        <a class="nav__link" href="#contacts">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--Кнопка -->
+            <a href="#" class="header__button button button_small">
+                Записаться
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!--Тег <main> предназначен для основного содержимого документа (основной контент). Контент внутри
+        элемента должен быть уникальным для всего документа и не должен содержать элементы, которые
+        повторяются в различных документах (боковые панели, навигационные ссылки, информация об авторских
+        правах, логотип сайта, формы поиска и тому подобное). Допускается использование элемента только
+        один раз в одном документе. -->
+    <main>
+
+        <!-- Запись на курс (Sign Up) -->
+        <section class="sign-up">
+
+            <div class="sign-up__container container">
+
+                <div class="sign-up__tag">
+                    Профессия
+                </div>
+
+                <h1 class="sign-up__caption">
+                    Системный<br>администратор
+                </h1>
+                <div class="sign-up__tagline">
+                    Незаменимый специалист в&nbsp;любой компании
+                </div>
+                <!--Кнопка -->
+                <a href="#" class="sign-up__button button button_small">
+                    Записаться
+                </a>
+                <div class="sign-up__row">
+                    <div class="feature">
+                        <div class="feature__header">Стоимость</div>
+                        От&nbsp;2700р/мес
+                    </div>
+                    <div class="feature">
+                        <div class="feature__header">Продолжительность</div>
+                        3&nbsp;месяца
+                    </div>
+                    <div class="feature">
+                        <div class="feature__header">Форма обучения</div>
+                        Очная
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Описание специальности (Description of Specialty) -->
+        <section class="specialty">
+
+            <div class="specialty__container container">
+
+                <div class="specialty__block">
+                    <h2 class="specialty__caption caption_red-mark specialty__caption_wide caption">
+                        Кто такой системный администратор
+                    </h2>
+                    <p class="specialty__text text">
+                        Системный администратор обеспечивает бесперебойное функционирование компьютерной техники
+                        и&nbsp;программного обеспечения в&nbsp;организации. Он&nbsp;занимается поддержкой серверов,
+                        проектирует и&nbsp;администрирует локальную сеть, выдаёт пользователям доступ к&nbsp;сайтам.
+                        <br><br>
+                        Сисадмин&nbsp;— штатный или на&nbsp;аутсорсе&nbsp;— нужен каждой компании, где есть хотя&nbsp;бы
+                        один компьютер, поэтому представители этой профессии не&nbsp;испытывают проблем
+                        с&nbsp;трудоустройством.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- О курсе (About Section) -->
+        <section class="about" id="about">
+
+            <div class="about__container container">
+
+                <div class="about__block">
+                    <h2 class="about__caption caption_red-mark caption">
+                        О&nbsp;курсе
+                    </h2>
+                    <p class="about__text text">
+                        Курс предназначен для широкого круга слушателей, желающих познакомиться с&nbsp;локальными
+                        сетями, понять принципы, по&nbsp;которым они работают, получить знания и&nbsp;навыки
+                        по&nbsp;их&nbsp;построению. Слушатели также познакомятся с&nbsp;основополагающими принципами
+                        работы ОС&nbsp;Windows в&nbsp;локальной сети. Курс является базовым в&nbsp;обучении технических
+                        специалистов и&nbsp;предполагает обучение фундаментальным принципам построения локальных сетей.
+                    </p>
+                </div>
+                <div class="about__row">
+                    <div class="about__block_second">
+                        <h2 class="about__caption about__caption_second caption_red-mark caption">
+                            Выдаваемый документ
+                        </h2>
+                        <p class="about__text about__text_narrow text">
+                            Диплом о&nbsp;профессиональной переподготовке с&nbsp;присвоением квалификации
+                        </p>
+                    </div>
+                    <!--Кнопка -->
+                    <a href="#" class="about__button button button_big">
+                        Сайт образовательного<br>центра
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!--Подвал (Footer) с контактами (Contacts)  -->
+    <footer class="footer" id="contacts">
+
+        <div class="footer__container container">
+
+            <!--Навигационная панель с социальными сетями (Social Media Navigation Bar) -->
+            <nav class="footer__nav nav">
+                <ul class="nav__menu">
+                    <li class="nav__item nav__item_spacer-footer">
+                        <a class="footer__icon" href="#" title="Facebook" target="_blank">
+                            <!--Font Awesome v5.15 Creative Commons Attribution 4.0 International license https://fontawesome.com/license -->
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" height="40px"
+                                viewBox="0 0 448 512">
+                                <path fill="#ffffff"
+                                    d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z">
+                                </path>
+                                <path fill="#currentColor"
+                                    d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav__item nav__item_spacer-footer">
+                        <a class="footer__icon" href="#" title="ВКонтакте" target="_blank">
+                            <!--Font Awesome v5.15 Creative Commons Attribution 4.0 International license https://fontawesome.com/license -->
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" height="40px"
+                                viewBox="0 0 448 512">
+                                <path fill="#currentColor"
+                                    d="m448 80v352c0 26.5-21.5 48-48 48h-352c-26.5 0-48-21.5-48-48v-352c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z">
+                                </path>
+                                <path fill="#ffffff"
+                                    d="m318.3 254.5c-3.3 5.3-4.6 8 0 13.9c1.8 2.6 42 40.7 48 59.2c2.6 8.8-1.9 13.3-10.9 13.3h-31.2c-11.9 0-15.4-9.5-36.7-30.7c-18.5-17.9-26.5-20.3-31.1-20.3c-10 0-8.2 3.4-8.2 38.8c0 7.7-2.5 12.2-22.4 12.2c-33.1 0-69.5-20.1-95.4-57.2c-38.8-54.4-49.4-95.6-49.4-103.8c0-4.7 1.8-8.9 10.7-8.9h31.3c8 0 11 3.5 14.1 12.2c15.3 44.6 41.1 83.5 51.7 83.5c4 0 5.8-1.8 5.8-11.9v-46.1c-1.1-21.2-12.4-23-12.4-30.5c0-3.5 3-7.2 8-7.2h49.1c6.6 0 8.8 3.6 8.8 11.5v62c0 6.6 3.1 9 5 9c4 0 7.4-2.4 14.6-9.7c22.5-25.1 38.5-63.9 38.5-63.9c1.9-4.7 5.6-8.9 13.6-8.9h31.2c9.5 0 11.4 4.9 9.5 11.5c-3.9 18.2-42.1 72-42.2 72z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a class="footer__icon" href="#" title="YouTube" target="_blank">
+                            <!--Font Awesome v5.15 Creative Commons Attribution 4.0 International license https://fontawesome.com/license -->
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" height="40px"
+                                viewBox="0 0 448 512">
+                                <path fill="#ffffff"
+                                    d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z">
+                                </path>
+                                <path fill="#currentColor"
+                                    d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+            <p class="footer__address">098773 Санкт Петербург,<br>ул. Бассейная, д&nbsp;23</p>
+            <a class="footer__link footer__link_spacer-email" href="mailto:sys-adm@gmail.com"
+                title="Напишите нам">sys-adm@gmail.com</a>
+            <a class="footer__link footer__link_spacer-phone footer__link_narrow" href="tel:+78003214323"
+                title="Позвоните нам">8-800-321-43-23</a>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

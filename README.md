@@ -28,7 +28,7 @@
 ## [Тема 8. Клиентский JavaScript. Формы и обработка событий](Module_2/loschenkov_JSBasics_8)
 ## Итоговый тест
 
-# [Модуль 3. Современные технологии верстки](Module_3)
+# [Модуль 3. Современные технологии верстки](Module_3/)
 ## Тема 1. CSS-фреймворки
 ## [Тема 2. Контейнеры. Система сеток Bootstrap](Module_3/loschenkov_Bootstrap2)
 ## [Тема 3. Оформление HTML-элементов](Module_3/loschenkov_Bootstrap3)
@@ -37,4 +37,11 @@
 ## [Тема 6. Встраивание медиа-файлов](Module_3/loschenkov_Bootstrap6)
 ## [Тема 7. Flexbox. Сетка Flexbox](Module_3/loschenkov_Bootstrap7)
 ## Тема 8. JavaScript и события Bootstrap
-## Итоговое задание к курсу
+## [Итоговое задание к курсу*](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_3-final)
+
+# [Модуль 4. Методологии и инструменты современной верстки](Module_4/)
+## [Тема 1. Принципы организации CSS](Module_4/loschenkov_Method1)
+## Тема 2. GridCSS
+## Тема 3. Таск-менеджер GULP
+## Тема 4. Препроцессоры CSS. Основы работы SASS
+## Тема 5. Препроцессоры CSS. Наследование и импорт
