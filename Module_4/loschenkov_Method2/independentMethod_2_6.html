@@ -7,15 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Самостоятельная работа &#8470;2.6. Размещение элементов по линиям</title>
     <style>
-        .box1 {
-            grid-column-start: 1;
-            grid-column-end: 4;
-            grid-row-start: 1;
-            grid-row-end: 3;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
         * {
             box-sizing: border-box;
         }
@@ -24,6 +15,7 @@
             border: 2px solid #f76707;
             border-radius: 5px;
             background-color: #fff4e6;
+            display: grid;
         }
 
         .box {
@@ -34,11 +26,48 @@
             color: #d9480f;
         }
 
+        .box1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
         .nested {
             border: 2px solid #ffec99;
             border-radius: 5px;
             background-color: #fff9db;
             padding: 1em;
+        }
+
+        .box2 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .box3 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .box4 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        .box5 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
         }
     </style>
 </head>
