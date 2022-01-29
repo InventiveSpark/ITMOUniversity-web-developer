@@ -43,5 +43,5 @@
 ## [Тема 1. Принципы организации CSS](Module_4/loschenkov_Method1)
 ## [Тема 2. GridCSS](Module_4/loschenkov_Method2)
 ## Тема 3. Таск-менеджер GULP
-## Тема 4. Препроцессоры CSS. Основы работы SASS
-## Тема 5. Препроцессоры CSS. Наследование и импорт
+## [Тема 4. Препроцессоры CSS. Основы работы SASS](Module_4/loschenkov_Method4)
+## [Тема 5. Препроцессоры CSS. Наследование и импорт](Module_4/loschenkov_Method5)

@@ -1,0 +1,7 @@
+.search-form {
+    margin: 15px;
+
+    @import "__input/search-form__input.scss";
+
+    @import "__button/search-form__button.scss";
+}

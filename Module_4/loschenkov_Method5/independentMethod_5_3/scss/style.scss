@@ -1,0 +1,32 @@
+$color: #778899;
+$percent: 5%;
+$percentStep: 5;
+$fontSize: 76px;
+$fontSizeStep: 10;
+
+.wrapper {
+    width: 60%;
+    margin: 5% auto 0;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 4%;
+}
+
+@for $i from 1 through 6 {
+    $percent: $percent + $percentStep;
+    $fontSize: $fontSize - $fontSizeStep;
+
+    h#{$i} {
+        color: lighten($color, $percent);
+        font-size: $fontSize;
+    }
+}

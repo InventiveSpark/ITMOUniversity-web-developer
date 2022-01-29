@@ -1,0 +1,7 @@
+.menu {
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+
+    @import "__item/menu__item.scss";
+}

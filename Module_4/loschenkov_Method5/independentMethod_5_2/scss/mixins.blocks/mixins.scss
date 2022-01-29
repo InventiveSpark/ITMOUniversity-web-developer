@@ -1,0 +1,6 @@
+@mixin style-text {
+    font-size: $middleTextSize;
+    background-color: $bgColor;
+    color: $textColor;
+    padding: 5px 10px;
+}

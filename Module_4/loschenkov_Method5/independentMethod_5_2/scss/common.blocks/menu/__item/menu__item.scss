@@ -1,0 +1,14 @@
+.menu__item {
+    display: inline-block;
+    padding: 5px 10px;
+
+    a {
+        text-decoration: none;
+        color: $bgColor;
+        font-size: $middleTextSize;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
