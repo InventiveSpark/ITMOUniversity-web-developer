@@ -50,4 +50,6 @@
 ## [Тема 1. Системы контроля версий. Репозиторий Git](Module_5/loschenkov_Git1)
 ## [Тема 2. Ветвление в Git](Module_5/loschenkov_Git2)
 ## Тема 3. Использование Git на сервере. Распределенная работа в Git
-## Тема 4. Использование Git в других окружениях
+## [Тема 4. Использование Git в других окружениях](Module_5/loschenkov_Git4) ([репозиторий*](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_5-independent-work_4))
+
+## Итоговый тест
