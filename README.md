@@ -64,4 +64,4 @@
 ## Тема 8. Объектно-ориентированное программирование на PHP
 ## Тема 9. Работа с СУБД MySQL
 
-# Модуль 7. Дипломное проектирование
+# [Модуль 7. Дипломное проектирование](Module_7/) ([репозиторий*](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_7-Diploma-Project))
