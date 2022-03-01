@@ -38,6 +38,6 @@ include('articlemain.php');
    файл asideright.php: */
 include_once('asideright.php');
 
-// Файл header.php, содержащий подвал, обязательно будет добавлен только один раз:
+// Файл footer.php, содержащий подвал, обязательно будет добавлен только один раз:
 require_once('footer.php');
 ?>
