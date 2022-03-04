@@ -61,7 +61,7 @@
 ## [Тема 5. Пользовательские функции](Module_6/loschenkov_PHP5)
 ## [Тема 6. Глобальные массивы GET и POST](Module_6/loschenkov_PHP6)
 ## [Тема 7. Сессии и куки](Module_6/loschenkov_PHP7)
-## Тема 8. Объектно-ориентированное программирование на PHP
+## [Тема 8. Объектно-ориентированное программирование на PHP](Module_6/loschenkov_PHP8)
 ## Тема 9. Работа с СУБД MySQL
 
 # [Модуль 7. Дипломное проектирование](Module_7/) ([репозиторий*](https://github.com/InventiveSpark/ITMOUniversity-web-developer-Module_7-Diploma-Project))
