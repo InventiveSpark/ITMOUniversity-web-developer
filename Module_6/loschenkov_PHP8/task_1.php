@@ -44,12 +44,12 @@
         {
             return $this->age;
         }
-        // Метод задания (установки) возраста:
+        // Метод задания (установки) группы:
         public function setGroup($group)
         {
             $this->group = $group;
         }
-        // Метод получения (чтения) возраста:
+        // Метод получения (чтения) группы:
         public function getGroup()
         {
             return $this->group;
