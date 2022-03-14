@@ -1,0 +1,34 @@
+table {
+    margin: 30px auto;
+}
+
+table caption {
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tr>td,
+table tr>th {
+    background-color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+table tr>th {
+    text-align: center;
+}
+
+/* Оформление чётных строк таблицы: */
+table tr:nth-child(even)>td {
+    background-color: #f2f2f2;
+}
+
+table {
+    border: 2px solid #f2f2f2;
+}
+
+.postcard {
+    width: 150px;
+}
